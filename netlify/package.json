@@ -1,0 +1,10 @@
+{
+    "name": "tr-portfolio_functions",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {},
+    "dependencies": {
+        "@netlify/functions": "^2.4.1"
+    },
+    "devDependencies": {}
+}

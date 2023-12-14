@@ -1,4 +1,9 @@
 [build]
     publish = "dist"
     command = "yarn generate"
-    
+
+[functions]
+    directory = "netlify/functions"
+
+[dev]
+    functionsPort = 8888
