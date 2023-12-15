@@ -10,7 +10,7 @@ export const handler: Handler = async (event: any, _context: any) => {
   // JSONを読んでみる
   try {
     // サーバー上のJSONファイルのパス
-    const jsonFilePath = path.resolve(__dirname, '../hoge.json');
+    const jsonFilePath = path.resolve(__dirname, '../route-db/lines.json');
 
     // JSONファイルを読み込む
     const jsonData = fs.readFileSync(jsonFilePath, 'utf-8');
@@ -21,7 +21,7 @@ export const handler: Handler = async (event: any, _context: any) => {
         statusCode: 200,
         body: JSON.stringify({
         // queryに書き換え
-        message: `Hello, ${query}!, ${data.foo}`
+        message: `Hello, ${query}!, ${data[0].name}`
         })
     }
   } catch (error) {
