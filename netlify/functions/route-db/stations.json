@@ -1,0 +1,4310 @@
+[
+	{
+		"id": 0,
+		"name": "門司港",
+		"name_kana": "もじこう",
+		"name_en": "Mojiko",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA31"
+		]
+	},
+	{
+		"id": 1,
+		"name": "小森江",
+		"name_kana": "こもりえ",
+		"name_en": "Komorie",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA30"
+		]
+	},
+	{
+		"id": 2,
+		"name": "門司",
+		"name_kana": "もじ",
+		"name_en": "Moji",
+		"lines": [
+			0,
+			1
+		],
+		"refs": [
+			"JA29",
+			"JA52"
+		]
+	},
+	{
+		"id": 3,
+		"name": "小倉",
+		"name_kana": "こくら",
+		"name_en": "Kokura",
+		"lines": [
+			0,
+			5,
+			8,
+			13,
+			22
+		],
+		"refs": [
+			"JA28",
+			"JF01",
+			"JI01",
+			"",
+			"01"
+		]
+	},
+	{
+		"id": 4,
+		"name": "西小倉",
+		"name_kana": "にしこくら",
+		"name_en": "Nishi-Kokura",
+		"lines": [
+			0,
+			5,
+			8
+		],
+		"refs": [
+			"JA27",
+			"JF02",
+			"JI02"
+		]
+	},
+	{
+		"id": 5,
+		"name": "九州工大前",
+		"name_kana": "きゅうしゅうこうだいまえ",
+		"name_en": "Kyushukodai-mae",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA26"
+		]
+	},
+	{
+		"id": 6,
+		"name": "戸畑",
+		"name_kana": "とばた",
+		"name_en": "Tobata",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA25"
+		]
+	},
+	{
+		"id": 7,
+		"name": "枝光",
+		"name_kana": "えだみつ",
+		"name_en": "Edamitsu",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA24"
+		]
+	},
+	{
+		"id": 8,
+		"name": "スペースワールド",
+		"name_kana": "すぺーすわーるど",
+		"name_en": "Space World",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA23"
+		]
+	},
+	{
+		"id": 9,
+		"name": "八幡",
+		"name_kana": "やはた",
+		"name_en": "Yahata",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA22"
+		]
+	},
+	{
+		"id": 10,
+		"name": "黒崎",
+		"name_kana": "くろさき",
+		"name_en": "Kurosaki",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA21"
+		]
+	},
+	{
+		"id": 11,
+		"name": "陣原",
+		"name_kana": "じんのはる",
+		"name_en": "Jinnoharu",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA20"
+		]
+	},
+	{
+		"id": 12,
+		"name": "折尾",
+		"name_kana": "おりお",
+		"name_en": "Orio",
+		"lines": [
+			0,
+			2,
+			4
+		],
+		"refs": [
+			"JA19",
+			"JC26",
+			"JE01"
+		]
+	},
+	{
+		"id": 13,
+		"name": "水巻",
+		"name_kana": "みずまき",
+		"name_en": "Mizumaki",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA18"
+		]
+	},
+	{
+		"id": 14,
+		"name": "遠賀川",
+		"name_kana": "おんががわ",
+		"name_en": "Ongagawa",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA17"
+		]
+	},
+	{
+		"id": 15,
+		"name": "海老津",
+		"name_kana": "えびつ",
+		"name_en": "Ebitsu",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA16"
+		]
+	},
+	{
+		"id": 16,
+		"name": "教育大前",
+		"name_kana": "きょういくだいまえ",
+		"name_en": "Kyoikudai-mae",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA15"
+		]
+	},
+	{
+		"id": 17,
+		"name": "赤間",
+		"name_kana": "あかま",
+		"name_en": "Akama",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA14"
+		]
+	},
+	{
+		"id": 18,
+		"name": "東郷",
+		"name_kana": "とうごう",
+		"name_en": "Togo",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA13"
+		]
+	},
+	{
+		"id": 19,
+		"name": "東福間",
+		"name_kana": "ひがしふくま",
+		"name_en": "Higashi-Fukuma",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA12"
+		]
+	},
+	{
+		"id": 20,
+		"name": "福間",
+		"name_kana": "ふくま",
+		"name_en": "Fukuma",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA11"
+		]
+	},
+	{
+		"id": 21,
+		"name": "千鳥",
+		"name_kana": "ちどり",
+		"name_en": "Chidori",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA10"
+		]
+	},
+	{
+		"id": 22,
+		"name": "古賀",
+		"name_kana": "こが",
+		"name_en": "Koga",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA09"
+		]
+	},
+	{
+		"id": 23,
+		"name": "ししぶ",
+		"name_kana": "ししぶ",
+		"name_en": "Shishibu",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA08"
+		]
+	},
+	{
+		"id": 24,
+		"name": "新宮中央",
+		"name_kana": "しんぐうちゅうおう",
+		"name_en": "Shingu-chuo",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA07"
+		]
+	},
+	{
+		"id": 25,
+		"name": "福工大前",
+		"name_kana": "ふっこうだいまえ",
+		"name_en": "Fukkodai-mae",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA06"
+		]
+	},
+	{
+		"id": 26,
+		"name": "九産大前",
+		"name_kana": "きゅうさんだいまえ",
+		"name_en": "Kyusandai-mae",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA05"
+		]
+	},
+	{
+		"id": 27,
+		"name": "香椎",
+		"name_kana": "かしい",
+		"name_en": "Kashii",
+		"lines": [
+			0,
+			3
+		],
+		"refs": [
+			"JA04",
+			"JD06"
+		]
+	},
+	{
+		"id": 28,
+		"name": "千早",
+		"name_kana": "ちはや",
+		"name_en": "Chihaya",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA03"
+		]
+	},
+	{
+		"id": 29,
+		"name": "箱崎",
+		"name_kana": "はこざき",
+		"name_en": "Hakozaki",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JA02"
+		]
+	},
+	{
+		"id": 30,
+		"name": "吉塚",
+		"name_kana": "よしづか",
+		"name_en": "Yoshizuka",
+		"lines": [
+			0,
+			2
+		],
+		"refs": [
+			"JA01",
+			"JC01"
+		]
+	},
+	{
+		"id": 31,
+		"name": "博多",
+		"name_kana": "はかた",
+		"name_en": "Hakata",
+		"lines": [
+			0,
+			2,
+			12,
+			13,
+			14,
+			15
+		],
+		"refs": [
+			"00",
+			"00",
+			"",
+			"",
+			"",
+			"K11"
+		]
+	},
+	{
+		"id": 32,
+		"name": "竹下",
+		"name_kana": "たけした",
+		"name_en": "Takeshita",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB01"
+		]
+	},
+	{
+		"id": 33,
+		"name": "笹原",
+		"name_kana": "ささばる",
+		"name_en": "Sasabaru",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB02"
+		]
+	},
+	{
+		"id": 34,
+		"name": "南福岡",
+		"name_kana": "みなみふくおか",
+		"name_en": "Minami-Fukuoka",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB03"
+		]
+	},
+	{
+		"id": 35,
+		"name": "春日",
+		"name_kana": "かすが",
+		"name_en": "Kasuga",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB04"
+		]
+	},
+	{
+		"id": 36,
+		"name": "大野城",
+		"name_kana": "おおのじょう",
+		"name_en": "Onojo",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB05"
+		]
+	},
+	{
+		"id": 37,
+		"name": "水城",
+		"name_kana": "みずき",
+		"name_en": "Mizuki",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB06"
+		]
+	},
+	{
+		"id": 38,
+		"name": "都府楼南",
+		"name_kana": "とふろうみなみ",
+		"name_en": "Tofurominami",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB07"
+		]
+	},
+	{
+		"id": 39,
+		"name": "二日市",
+		"name_kana": "ふつかいち",
+		"name_en": "Futsukaichi",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB08"
+		]
+	},
+	{
+		"id": 40,
+		"name": "天拝山",
+		"name_kana": "てんぱいざん",
+		"name_en": "Tempaizan",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB09"
+		]
+	},
+	{
+		"id": 41,
+		"name": "原田",
+		"name_kana": "はるだ",
+		"name_en": "Haruda",
+		"lines": [
+			0,
+			6
+		],
+		"refs": [
+			"JB10",
+			"JG05"
+		]
+	},
+	{
+		"id": 42,
+		"name": "けやき台",
+		"name_kana": "けやきだい",
+		"name_en": "Keyakidai",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB11"
+		]
+	},
+	{
+		"id": 43,
+		"name": "基山",
+		"name_kana": "きやま",
+		"name_en": "Kiyama",
+		"lines": [
+			0,
+			24
+		],
+		"refs": [
+			"JB12"
+		]
+	},
+	{
+		"id": 44,
+		"name": "弥生が丘",
+		"name_kana": "やよいがおか",
+		"name_en": "Yayoigaoka",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB13"
+		]
+	},
+	{
+		"id": 45,
+		"name": "田代",
+		"name_kana": "たしろ",
+		"name_en": "Tashiro",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB14"
+		]
+	},
+	{
+		"id": 46,
+		"name": "鳥栖",
+		"name_kana": "とす",
+		"name_en": "Tosu",
+		"lines": [
+			0,
+			7
+		],
+		"refs": [
+			"JB15",
+			"JH01"
+		]
+	},
+	{
+		"id": 47,
+		"name": "肥前旭",
+		"name_kana": "ひぜんあさひ",
+		"name_en": "Hizen-Asahi",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB16"
+		]
+	},
+	{
+		"id": 48,
+		"name": "久留米",
+		"name_kana": "くるめ",
+		"name_en": "Kurume",
+		"lines": [
+			0,
+			11,
+			12
+		],
+		"refs": [
+			"JB17"
+		]
+	},
+	{
+		"id": 49,
+		"name": "荒木",
+		"name_kana": "あらき",
+		"name_en": "Araki",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB18"
+		]
+	},
+	{
+		"id": 50,
+		"name": "西牟田",
+		"name_kana": "にしむた",
+		"name_en": "Nishimuta",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB19"
+		]
+	},
+	{
+		"id": 51,
+		"name": "羽犬塚",
+		"name_kana": "はいぬづか",
+		"name_en": "Hainuzuka",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB20"
+		]
+	},
+	{
+		"id": 52,
+		"name": "筑後船小屋",
+		"name_kana": "ちくごふなごや",
+		"name_en": "Chikugo-Funagoya",
+		"lines": [
+			0,
+			12
+		],
+		"refs": [
+			"JB21"
+		]
+	},
+	{
+		"id": 53,
+		"name": "瀬高",
+		"name_kana": "せだか",
+		"name_en": "Setaja",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB22"
+		]
+	},
+	{
+		"id": 54,
+		"name": "南瀬高",
+		"name_kana": "みなみせだか",
+		"name_en": "Minami-Setaka",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB23"
+		]
+	},
+	{
+		"id": 55,
+		"name": "渡瀬",
+		"name_kana": "わたぜ",
+		"name_en": "Wataze",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB24"
+		]
+	},
+	{
+		"id": 56,
+		"name": "吉野",
+		"name_kana": "よしの",
+		"name_en": "Yoshino",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB25"
+		]
+	},
+	{
+		"id": 57,
+		"name": "銀水",
+		"name_kana": "ぎんすい",
+		"name_en": "Ginsui",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB26"
+		]
+	},
+	{
+		"id": 58,
+		"name": "大牟田",
+		"name_kana": "おおむた",
+		"name_en": "Omuta",
+		"lines": [
+			0,
+			18
+		],
+		"refs": [
+			"JB27",
+			"T50"
+		]
+	},
+	{
+		"id": 59,
+		"name": "荒尾",
+		"name_kana": "あらお",
+		"name_en": "Arao",
+		"lines": [
+			0
+		],
+		"refs": [
+			"JB28"
+		]
+	},
+	{
+		"id": 60,
+		"name": "柚須",
+		"name_kana": "ゆす",
+		"name_en": "Yusu",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC02"
+		]
+	},
+	{
+		"id": 61,
+		"name": "原町",
+		"name_kana": "はるまち",
+		"name_en": "Harumachi",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC03"
+		]
+	},
+	{
+		"id": 62,
+		"name": "長者原",
+		"name_kana": "ちょうじゃばる",
+		"name_en": "Chojabaru",
+		"lines": [
+			2,
+			3
+		],
+		"refs": [
+			"JC04",
+			"JD11"
+		]
+	},
+	{
+		"id": 63,
+		"name": "門松",
+		"name_kana": "かどまつ",
+		"name_en": "Kadomatsu",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC05"
+		]
+	},
+	{
+		"id": 64,
+		"name": "笹栗",
+		"name_kana": "ささぐり",
+		"name_en": "Sasaguri",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC06"
+		]
+	},
+	{
+		"id": 65,
+		"name": "筑前山手",
+		"name_kana": "ちくぜんやまて",
+		"name_en": "Chikuzen-Yamate",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC07"
+		]
+	},
+	{
+		"id": 66,
+		"name": "城戸南蔵院前",
+		"name_kana": "きどなんぞういんまえ",
+		"name_en": "Kido Nanzoin-mae",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC08"
+		]
+	},
+	{
+		"id": 67,
+		"name": "九郎原",
+		"name_kana": "くろうばる",
+		"name_en": "Kurobaru",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC09"
+		]
+	},
+	{
+		"id": 68,
+		"name": "筑前大分",
+		"name_kana": "ちくぜんだいぶ",
+		"name_en": "Chikuzen-Daibu",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC10"
+		]
+	},
+	{
+		"id": 69,
+		"name": "桂川",
+		"name_kana": "けいせん",
+		"name_en": "Keisen",
+		"lines": [
+			2,
+			6
+		],
+		"refs": [
+			"JC11",
+			"JG01"
+		]
+	},
+	{
+		"id": 70,
+		"name": "天道",
+		"name_kana": "てんとう",
+		"name_en": "Tento",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC12"
+		]
+	},
+	{
+		"id": 71,
+		"name": "飯塚",
+		"name_kana": "いいづか",
+		"name_en": "Iizuka",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC13"
+		]
+	},
+	{
+		"id": 72,
+		"name": "新飯塚",
+		"name_kana": "しんいいづか",
+		"name_en": "Shin-Iizuka",
+		"lines": [
+			2,
+			9
+		],
+		"refs": [
+			"JC14",
+			"JJ01"
+		]
+	},
+	{
+		"id": 73,
+		"name": "浦田",
+		"name_kana": "うらた",
+		"name_en": "Urata",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC15"
+		]
+	},
+	{
+		"id": 74,
+		"name": "鯰田",
+		"name_kana": "なまずた",
+		"name_en": "Namazuta",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC16"
+		]
+	},
+	{
+		"id": 75,
+		"name": "小竹",
+		"name_kana": "こたけ",
+		"name_en": "Kotake",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC17"
+		]
+	},
+	{
+		"id": 76,
+		"name": "勝野",
+		"name_kana": "かつの",
+		"name_en": "Katsuno",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC18"
+		]
+	},
+	{
+		"id": 77,
+		"name": "直方",
+		"name_kana": "のうがた",
+		"name_en": "Nogata",
+		"lines": [
+			2,
+			25
+		],
+		"refs": [
+			"JC19",
+			"HC1"
+		]
+	},
+	{
+		"id": 78,
+		"name": "新入",
+		"name_kana": "しんにゅう",
+		"name_en": "Shinnyu",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC20"
+		]
+	},
+	{
+		"id": 79,
+		"name": "筑前植木",
+		"name_kana": "ちくぜんうえき",
+		"name_en": "Chikuzen-Ueki",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC21"
+		]
+	},
+	{
+		"id": 80,
+		"name": "鞍手",
+		"name_kana": "くらて",
+		"name_en": "Kurate",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC22"
+		]
+	},
+	{
+		"id": 81,
+		"name": "筑前垣生",
+		"name_kana": "ちくぜんはぶ",
+		"name_en": "Chikuzen-Habu",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC23"
+		]
+	},
+	{
+		"id": 82,
+		"name": "中間",
+		"name_kana": "なかま",
+		"name_en": "Nakama",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC24"
+		]
+	},
+	{
+		"id": 83,
+		"name": "東水巻",
+		"name_kana": "ひがしみずまき",
+		"name_en": "Higashi-Mizumaki",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JC25"
+		]
+	},
+	{
+		"id": 84,
+		"name": "西戸崎",
+		"name_kana": "さいとざき",
+		"name_en": "Saitozaki",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD01"
+		]
+	},
+	{
+		"id": 85,
+		"name": "海ノ中道",
+		"name_kana": "うみのなかみち",
+		"name_en": "Uminonakamichi",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD02"
+		]
+	},
+	{
+		"id": 86,
+		"name": "雁ノ巣",
+		"name_kana": "がんのす",
+		"name_en": "Gannnosu",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD03"
+		]
+	},
+	{
+		"id": 87,
+		"name": "奈多",
+		"name_kana": "なた",
+		"name_en": "Nata",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD04"
+		]
+	},
+	{
+		"id": 88,
+		"name": "和白",
+		"name_kana": "わじろ",
+		"name_en": "Wajiro",
+		"lines": [
+			3,
+			21
+		],
+		"refs": [
+			"JD05",
+			"NK08"
+		]
+	},
+	{
+		"id": 89,
+		"name": "香椎神宮",
+		"name_kana": "かしいじんぐう",
+		"name_en": "Kashii-jingu",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD07"
+		]
+	},
+	{
+		"id": 90,
+		"name": "舞松原",
+		"name_kana": "まいまつばら",
+		"name_en": "Maimatsubara",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD08"
+		]
+	},
+	{
+		"id": 91,
+		"name": "土井",
+		"name_kana": "どい",
+		"name_en": "Doi",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD09"
+		]
+	},
+	{
+		"id": 92,
+		"name": "伊賀",
+		"name_kana": "いが",
+		"name_en": "Iga",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD10"
+		]
+	},
+	{
+		"id": 93,
+		"name": "酒殿",
+		"name_kana": "さかど",
+		"name_en": "Sakado",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD12"
+		]
+	},
+	{
+		"id": 94,
+		"name": "須惠",
+		"name_kana": "すえ",
+		"name_en": "Sue",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD13"
+		]
+	},
+	{
+		"id": 95,
+		"name": "須惠中央",
+		"name_kana": "すえちゅうおう",
+		"name_en": "Sue-chuo",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD14"
+		]
+	},
+	{
+		"id": 96,
+		"name": "新原",
+		"name_kana": "しんばる",
+		"name_en": "Shinbaru",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD15"
+		]
+	},
+	{
+		"id": 97,
+		"name": "宇美",
+		"name_kana": "うみ",
+		"name_en": "Umi",
+		"lines": [
+			3
+		],
+		"refs": [
+			"JD16"
+		]
+	},
+	{
+		"id": 98,
+		"name": "本城",
+		"name_kana": "ほんじょう",
+		"name_en": "Honjo",
+		"lines": [
+			4
+		],
+		"refs": [
+			"JE02"
+		]
+	},
+	{
+		"id": 99,
+		"name": "二島",
+		"name_kana": "ふたじま",
+		"name_en": "Futajima",
+		"lines": [
+			4
+		],
+		"refs": [
+			"JE03"
+		]
+	},
+	{
+		"id": 100,
+		"name": "奥洞海",
+		"name_kana": "おくどうかい",
+		"name_en": "Oku-Dokai",
+		"lines": [
+			4
+		],
+		"refs": [
+			"JE04"
+		]
+	},
+	{
+		"id": 101,
+		"name": "藤ノ木",
+		"name_kana": "ふじのき",
+		"name_en": "Fujinoki",
+		"lines": [
+			4
+		],
+		"refs": [
+			"JE05"
+		]
+	},
+	{
+		"id": 102,
+		"name": "若松",
+		"name_kana": "わかまつ",
+		"name_en": "Wakamatsu",
+		"lines": [
+			4
+		],
+		"refs": [
+			"JE06"
+		]
+	},
+	{
+		"id": 103,
+		"name": "南小倉",
+		"name_kana": "みなみこくら",
+		"name_en": "Minami-Kokura",
+		"lines": [
+			5,
+			8
+		],
+		"refs": [
+			"JF03",
+			"JI03"
+		]
+	},
+	{
+		"id": 104,
+		"name": "城野",
+		"name_kana": "じょうの",
+		"name_en": "Jono",
+		"lines": [
+			5,
+			8
+		],
+		"refs": [
+			"JF04",
+			"JI04"
+		]
+	},
+	{
+		"id": 105,
+		"name": "安部山公園",
+		"name_kana": "あべやまこうえん",
+		"name_en": "Abeyama-koen",
+		"lines": [
+			5
+		],
+		"refs": [
+			"JF05"
+		]
+	},
+	{
+		"id": 106,
+		"name": "下曽根",
+		"name_kana": "しもそね",
+		"name_en": "Shimo-Sone",
+		"lines": [
+			5
+		],
+		"refs": [
+			"JF06"
+		]
+	},
+	{
+		"id": 107,
+		"name": "朽網",
+		"name_kana": "くさみ",
+		"name_en": "Kusami",
+		"lines": [
+			5
+		],
+		"refs": [
+			"JF07"
+		]
+	},
+	{
+		"id": 108,
+		"name": "苅田",
+		"name_kana": "かんだ",
+		"name_en": "Kanda",
+		"lines": [
+			5
+		],
+		"refs": [
+			"JF08"
+		]
+	},
+	{
+		"id": 109,
+		"name": "小波瀬西工大前",
+		"name_kana": "おばせにしこうだいまえ",
+		"name_en": "Obase Nishikodai-mae",
+		"lines": [
+			5
+		],
+		"refs": [
+			"JF09"
+		]
+	},
+	{
+		"id": 110,
+		"name": "行橋",
+		"name_kana": "ゆくはし",
+		"name_en": "Yukuhashi",
+		"lines": [
+			5,
+			27
+		],
+		"refs": [
+			"JF10",
+			"HC31"
+		]
+	},
+	{
+		"id": 111,
+		"name": "南行橋",
+		"name_kana": "みなみゆくはし",
+		"name_en": "Minami-Yukuhashi",
+		"lines": [
+			5
+		]
+	},
+	{
+		"id": 112,
+		"name": "新田原",
+		"name_kana": "しんでんばる",
+		"name_en": "Shindembaru",
+		"lines": [
+			5
+		]
+	},
+	{
+		"id": 113,
+		"name": "築城",
+		"name_kana": "ついき",
+		"name_en": "Tsuiki",
+		"lines": [
+			5
+		]
+	},
+	{
+		"id": 114,
+		"name": "椎田",
+		"name_kana": "しいだ",
+		"name_en": "Shiida",
+		"lines": [
+			5
+		]
+	},
+	{
+		"id": 115,
+		"name": "豊前松江",
+		"name_kana": "ぶぜんしょうえ",
+		"name_en": "Buzen-Shoe",
+		"lines": [
+			5
+		]
+	},
+	{
+		"id": 116,
+		"name": "宇島",
+		"name_kana": "うのしま",
+		"name_en": "Unoshima",
+		"lines": [
+			5
+		]
+	},
+	{
+		"id": 117,
+		"name": "三毛門",
+		"name_kana": "みけかど",
+		"name_en": "Mikekado",
+		"lines": [
+			5
+		]
+	},
+	{
+		"id": 118,
+		"name": "吉富",
+		"name_kana": "よしとみ",
+		"name_en": "Yoshitomi",
+		"lines": [
+			5
+		]
+	},
+	{
+		"id": 119,
+		"name": "中津",
+		"name_kana": "なかつ",
+		"name_en": "Nakatsu",
+		"lines": [
+			5
+		]
+	},
+	{
+		"id": 120,
+		"name": "上穂波",
+		"name_kana": "かみほなみ",
+		"name_en": "Kami-Honami",
+		"lines": [
+			6
+		],
+		"refs": [
+			"JG02"
+		]
+	},
+	{
+		"id": 121,
+		"name": "筑前内野",
+		"name_kana": "ちくぜんうちの",
+		"name_en": "Chikuzen-Uchino",
+		"lines": [
+			6
+		],
+		"refs": [
+			"JG03"
+		]
+	},
+	{
+		"id": 122,
+		"name": "筑前山家",
+		"name_kana": "ちくぜんやまえ",
+		"name_en": "Chikuzen-Yamae",
+		"lines": [
+			6
+		],
+		"refs": [
+			"JG04"
+		]
+	},
+	{
+		"id": 123,
+		"name": "新鳥栖",
+		"name_kana": "しんとす",
+		"name_en": "Shin-Tosu",
+		"lines": [
+			7,
+			12
+		],
+		"refs": [
+			"JH02"
+		]
+	},
+	{
+		"id": 124,
+		"name": "肥前麓",
+		"name_kana": "ひぜんふもと",
+		"name_en": "Hizen-Fumoto",
+		"lines": [
+			7
+		],
+		"refs": [
+			"JH03"
+		]
+	},
+	{
+		"id": 125,
+		"name": "中原",
+		"name_kana": "なかばる",
+		"name_en": "Nakabaru",
+		"lines": [
+			7
+		],
+		"refs": [
+			"JH04"
+		]
+	},
+	{
+		"id": 126,
+		"name": "吉野ヶ里公園",
+		"name_kana": "よしのがりこうえん",
+		"name_en": "Yoshinogari-koen",
+		"lines": [
+			7
+		],
+		"refs": [
+			"JH05"
+		]
+	},
+	{
+		"id": 127,
+		"name": "神崎",
+		"name_kana": "かんざき",
+		"name_en": "Kanzaki",
+		"lines": [
+			7
+		],
+		"refs": [
+			"JH06"
+		]
+	},
+	{
+		"id": 128,
+		"name": "伊賀屋",
+		"name_kana": "いがや",
+		"name_en": "Igaya",
+		"lines": [
+			7
+		],
+		"refs": [
+			"JH07"
+		]
+	},
+	{
+		"id": 129,
+		"name": "佐賀",
+		"name_kana": "さが",
+		"name_en": "Saga",
+		"lines": [
+			7
+		],
+		"refs": [
+			"JH08"
+		]
+	},
+	{
+		"id": 130,
+		"name": "石田",
+		"name_kana": "いしだ",
+		"name_en": "Ishida",
+		"lines": [
+			8
+		],
+		"refs": [
+			"JI05"
+		]
+	},
+	{
+		"id": 131,
+		"name": "志井公園",
+		"name_kana": "しいこうえん",
+		"name_en": "Shii-koen",
+		"lines": [
+			8
+		],
+		"refs": [
+			"JI06"
+		]
+	},
+	{
+		"id": 132,
+		"name": "志井",
+		"name_kana": "しい",
+		"name_en": "Shii",
+		"lines": [
+			8
+		],
+		"refs": [
+			"JI07"
+		]
+	},
+	{
+		"id": 133,
+		"name": "石原町",
+		"name_kana": "いしはらまち",
+		"name_en": "Ishiharamachi",
+		"lines": [
+			8
+		],
+		"refs": [
+			"JI08"
+		]
+	},
+	{
+		"id": 134,
+		"name": "呼野",
+		"name_kana": "よぶの",
+		"name_en": "Yobuno",
+		"lines": [
+			8
+		],
+		"refs": [
+			"JI09"
+		]
+	},
+	{
+		"id": 135,
+		"name": "採銅所",
+		"name_kana": "さいどうしょ",
+		"name_en": "Saidosho",
+		"lines": [
+			8
+		],
+		"refs": [
+			"JI10"
+		]
+	},
+	{
+		"id": 136,
+		"name": "香春",
+		"name_kana": "かわら",
+		"name_en": "Kawara",
+		"lines": [
+			8
+		],
+		"refs": [
+			"JI11"
+		]
+	},
+	{
+		"id": 137,
+		"name": "一本松",
+		"name_kana": "いっぽんまつ",
+		"name_en": "Ippommatsu",
+		"lines": [
+			8
+		],
+		"refs": [
+			"JI12"
+		]
+	},
+	{
+		"id": 138,
+		"name": "田川伊田",
+		"name_kana": "たがわいた",
+		"name_en": "Tagawaita",
+		"lines": [
+			8,
+			25,
+			27
+		],
+		"refs": [
+			"JI13",
+			"HC15",
+			"HC15"
+		]
+	},
+	{
+		"id": 139,
+		"name": "田川後藤寺",
+		"name_kana": "たがわごとうじ",
+		"name_en": "Tagawagotoji",
+		"lines": [
+			8,
+			9,
+			26
+		],
+		"refs": [
+			"JI14",
+			"JJ06",
+			"HC55"
+		]
+	},
+	{
+		"id": 140,
+		"name": "池尻",
+		"name_kana": "いけじり",
+		"name_en": "Ikejiri",
+		"lines": [
+			8
+		]
+	},
+	{
+		"id": 141,
+		"name": "豊前川崎",
+		"name_kana": "ぶぜんかわさき",
+		"name_en": "Buzen Kawasaki",
+		"lines": [
+			8
+		]
+	},
+	{
+		"id": 142,
+		"name": "西添田",
+		"name_kana": "にしそえだ",
+		"name_en": "Nishi-Soeda",
+		"lines": [
+			8
+		]
+	},
+	{
+		"id": 143,
+		"name": "添田",
+		"name_kana": "そえだ",
+		"name_en": "Soeda",
+		"lines": [
+			8
+		]
+	},
+	{
+		"id": 144,
+		"name": "上三緒",
+		"name_kana": "かみみお",
+		"name_en": "Kami-Mio",
+		"lines": [
+			9
+		],
+		"refs": [
+			"JJ02"
+		]
+	},
+	{
+		"id": 145,
+		"name": "下鴨生",
+		"name_kana": "しもかもお",
+		"name_en": "Shimo-Kamoo",
+		"lines": [
+			9
+		],
+		"refs": [
+			"JJ03"
+		]
+	},
+	{
+		"id": 146,
+		"name": "筑前庄内",
+		"name_kana": "ちくぜんしょうない",
+		"name_en": "Chikuzen-Shonai",
+		"lines": [
+			9
+		],
+		"refs": [
+			"JJ04"
+		]
+	},
+	{
+		"id": 147,
+		"name": "船尾",
+		"name_kana": "ふなお",
+		"name_en": "Funao",
+		"lines": [
+			9
+		],
+		"refs": [
+			"JJ05"
+		]
+	},
+	{
+		"id": 148,
+		"name": "姪浜",
+		"name_kana": "めいのはま",
+		"name_en": "Meinohama",
+		"lines": [
+			10,
+			15
+		],
+		"refs": [
+			"JK01",
+			"K01"
+		]
+	},
+	{
+		"id": 149,
+		"name": "下山門",
+		"name_kana": "しもやまと",
+		"name_en": "Shimoyamato",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK02"
+		]
+	},
+	{
+		"id": 150,
+		"name": "今宿",
+		"name_kana": "いまじゅく",
+		"name_en": "Imajuku",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK03"
+		]
+	},
+	{
+		"id": 151,
+		"name": "九大学研都市",
+		"name_kana": "きゅうだいがっけんとし",
+		"name_en": "Kyudai-Gakkentoshi",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK04"
+		]
+	},
+	{
+		"id": 152,
+		"name": "周船寺",
+		"name_kana": "すせんじ",
+		"name_en": "Susenji",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK05"
+		]
+	},
+	{
+		"id": 153,
+		"name": "波多江",
+		"name_kana": "はたえ",
+		"name_en": "Hatae",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK06"
+		]
+	},
+	{
+		"id": 154,
+		"name": "糸島高校前",
+		"name_kana": "いとしまこうこうまえ",
+		"name_en": "Itoshimakoko-mae",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK07"
+		]
+	},
+	{
+		"id": 155,
+		"name": "筑前前原",
+		"name_kana": "ちくぜんまえばる",
+		"name_en": "Chikuzen-Maebaru",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK08"
+		]
+	},
+	{
+		"id": 156,
+		"name": "美咲が丘",
+		"name_kana": "みさきがおか",
+		"name_en": "Misakigaoka",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK09"
+		]
+	},
+	{
+		"id": 157,
+		"name": "加布里",
+		"name_kana": "かふり",
+		"name_en": "Kafuri",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK10"
+		]
+	},
+	{
+		"id": 158,
+		"name": "一貴山",
+		"name_kana": "いきさん",
+		"name_en": "Ikisan",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK11"
+		]
+	},
+	{
+		"id": 159,
+		"name": "筑前深江",
+		"name_kana": "ちくぜんふかえ",
+		"name_en": "Chikuzen-Fukae",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK12"
+		]
+	},
+	{
+		"id": 160,
+		"name": "大入",
+		"name_kana": "だいにゅう",
+		"name_en": "Dainyu",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK13"
+		]
+	},
+	{
+		"id": 161,
+		"name": "福吉",
+		"name_kana": "ふくよし",
+		"name_en": "Fukuyoshi",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK14"
+		]
+	},
+	{
+		"id": 162,
+		"name": "鹿家",
+		"name_kana": "しかか",
+		"name_en": "Shikaka",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK15"
+		]
+	},
+	{
+		"id": 163,
+		"name": "浜崎",
+		"name_kana": "はまさき",
+		"name_en": "Hamasaki",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK16"
+		]
+	},
+	{
+		"id": 164,
+		"name": "虹ノ松原",
+		"name_kana": "にじのまつばら",
+		"name_en": "Nijinomatsubara",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK17"
+		]
+	},
+	{
+		"id": 165,
+		"name": "東唐津",
+		"name_kana": "ひがしからつ",
+		"name_en": "Higashi-Karatsu",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK18"
+		]
+	},
+	{
+		"id": 166,
+		"name": "和多田",
+		"name_kana": "わただ",
+		"name_en": "Watada",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK19"
+		]
+	},
+	{
+		"id": 167,
+		"name": "唐津",
+		"name_kana": "からつ",
+		"name_en": "Karatsu",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK20"
+		]
+	},
+	{
+		"id": 168,
+		"name": "西唐津",
+		"name_kana": "にしからつ",
+		"name_en": "Nishi-Karatsu",
+		"lines": [
+			10
+		],
+		"refs": [
+			"JK21"
+		]
+	},
+	{
+		"id": 169,
+		"name": "久留米高校前",
+		"name_kana": "くるめこうこうまえ",
+		"name_en": "Kurumekoko-mae",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 170,
+		"name": "南久留米",
+		"name_kana": "みなみくるめ",
+		"name_en": "Minami-Kurume",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 171,
+		"name": "久留米大学前",
+		"name_kana": "くるめだいがくまえ",
+		"name_en": "Kurumedaigaku-mae",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 172,
+		"name": "御井",
+		"name_kana": "みい",
+		"name_en": "Mii",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 173,
+		"name": "善導寺",
+		"name_kana": "ぜんどうじ",
+		"name_en": "Zendoji",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 174,
+		"name": "筑後草野",
+		"name_kana": "ちくごくさの",
+		"name_en": "Chikugo-Kusano",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 175,
+		"name": "田主丸",
+		"name_kana": "たぬしまる",
+		"name_en": "Tanushimaru",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 176,
+		"name": "筑後吉井",
+		"name_kana": "ちくごよしい",
+		"name_en": "Chikugo-Yoshii",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 177,
+		"name": "うきは",
+		"name_kana": "うきは",
+		"name_en": "Ukiha",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 178,
+		"name": "筑後大石",
+		"name_kana": "ちくごおおいし",
+		"name_en": "Chikugo-Oishi",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 179,
+		"name": "夜明",
+		"name_kana": "よあけ",
+		"name_en": "Yoake",
+		"lines": [
+			11
+		]
+	},
+	{
+		"id": 180,
+		"name": "博多南",
+		"name_kana": "はかたみなみ",
+		"name_en": "Hakata-minami",
+		"lines": [
+			14
+		]
+	},
+	{
+		"id": 181,
+		"name": "室見",
+		"name_kana": "むろみ",
+		"name_en": "Muromi",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K02"
+		]
+	},
+	{
+		"id": 182,
+		"name": "藤崎",
+		"name_kana": "ふじさき",
+		"name_en": "Fujisaki",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K03"
+		]
+	},
+	{
+		"id": 183,
+		"name": "西新",
+		"name_kana": "にしじん",
+		"name_en": "Nishijin",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K04"
+		]
+	},
+	{
+		"id": 184,
+		"name": "唐人町",
+		"name_kana": "とうじんまち",
+		"name_en": "Tojinmachi",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K05"
+		]
+	},
+	{
+		"id": 185,
+		"name": "大濠公園",
+		"name_kana": "おおほりこうえん",
+		"name_en": "Ohorikoen (Ohori Park)",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K06"
+		]
+	},
+	{
+		"id": 186,
+		"name": "赤坂",
+		"name_kana": "あかさか",
+		"name_en": "Akasaka",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K07"
+		]
+	},
+	{
+		"id": 187,
+		"name": "天神",
+		"name_kana": "てんじん",
+		"name_en": "Tenjin",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K08"
+		]
+	},
+	{
+		"id": 188,
+		"name": "中洲川端",
+		"name_kana": "なかすかわばた",
+		"name_en": "Nakasu-Kawabata",
+		"lines": [
+			15,
+			16
+		],
+		"refs": [
+			"K09",
+			"H01"
+		]
+	},
+	{
+		"id": 189,
+		"name": "祇園",
+		"name_kana": "ぎおん",
+		"name_en": "Gion",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K10"
+		]
+	},
+	{
+		"id": 190,
+		"name": "東比恵",
+		"name_kana": "ひがしひえ",
+		"name_en": "Higashi-Hie",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K12"
+		]
+	},
+	{
+		"id": 191,
+		"name": "福岡空港",
+		"name_kana": "ふくおかくうこう",
+		"name_en": "Fukuokakuko (Airport)",
+		"lines": [
+			15
+		],
+		"refs": [
+			"K13"
+		]
+	},
+	{
+		"id": 192,
+		"name": "呉服町",
+		"name_kana": "ごふくまち",
+		"name_en": "Gofukumachi",
+		"lines": [
+			16
+		],
+		"refs": [
+			"H02"
+		]
+	},
+	{
+		"id": 193,
+		"name": "千代県庁口",
+		"name_kana": "ちよけんちょうぐち",
+		"name_en": "Chiyo-Kenchoguchi",
+		"lines": [
+			16
+		],
+		"refs": [
+			"H03"
+		]
+	},
+	{
+		"id": 194,
+		"name": "馬出九大病院前",
+		"name_kana": "まいだしきゅうだいびょういんまえ",
+		"name_en": "Maidashi-Kyudaibyoinmae",
+		"lines": [
+			16
+		],
+		"refs": [
+			"H04"
+		]
+	},
+	{
+		"id": 195,
+		"name": "箱崎宮前",
+		"name_kana": "はこざきみやまえ",
+		"name_en": "Hakozaki-Miyamae",
+		"lines": [
+			16
+		],
+		"refs": [
+			"H05"
+		]
+	},
+	{
+		"id": 196,
+		"name": "箱崎九大前",
+		"name_kana": "はこざききゅうだいまえ",
+		"name_en": "Hakozaki-Kyudaimae",
+		"lines": [
+			16
+		],
+		"refs": [
+			"H06"
+		]
+	},
+	{
+		"id": 197,
+		"name": "貝塚",
+		"name_kana": "かいづか",
+		"name_en": "Kaizuka",
+		"lines": [
+			16,
+			21
+		],
+		"refs": [
+			"H07",
+			"NK01"
+		]
+	},
+	{
+		"id": 198,
+		"name": "橋本",
+		"name_kana": "はしもと",
+		"name_en": "Hashimoto",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N01"
+		]
+	},
+	{
+		"id": 199,
+		"name": "次郎丸",
+		"name_kana": "じろうまる",
+		"name_en": "Jiromaru",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N02"
+		]
+	},
+	{
+		"id": 200,
+		"name": "賀茂",
+		"name_kana": "かも",
+		"name_en": "Kamo",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N03"
+		]
+	},
+	{
+		"id": 201,
+		"name": "野芥",
+		"name_kana": "のけ",
+		"name_en": "Noke",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N04"
+		]
+	},
+	{
+		"id": 202,
+		"name": "梅林",
+		"name_kana": "うめばやし",
+		"name_en": "Umebayashi",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N05"
+		]
+	},
+	{
+		"id": 203,
+		"name": "福大前",
+		"name_kana": "ふくだいまえ",
+		"name_en": "Fukudai-mae",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N06"
+		]
+	},
+	{
+		"id": 204,
+		"name": "七隈",
+		"name_kana": "ななくま",
+		"name_en": "Nanakuma",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N07"
+		]
+	},
+	{
+		"id": 205,
+		"name": "金山",
+		"name_kana": "かなやま",
+		"name_en": "Kanayama",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N08"
+		]
+	},
+	{
+		"id": 206,
+		"name": "茶山",
+		"name_kana": "ちゃやま",
+		"name_en": "Chayama",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N09"
+		]
+	},
+	{
+		"id": 207,
+		"name": "別府",
+		"name_kana": "べふ",
+		"name_en": "Befu",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N10"
+		]
+	},
+	{
+		"id": 208,
+		"name": "六本松",
+		"name_kana": "ろっぽんまつ",
+		"name_en": "Ropponmatsu",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N11"
+		]
+	},
+	{
+		"id": 209,
+		"name": "桜坂",
+		"name_kana": "さくらざか",
+		"name_en": "Sakurazaka",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N12"
+		]
+	},
+	{
+		"id": 210,
+		"name": "薬院大通",
+		"name_kana": "やくいんおおどおり",
+		"name_en": "Yakuin-odori",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N13"
+		]
+	},
+	{
+		"id": 211,
+		"name": "薬院",
+		"name_kana": "やくいん",
+		"name_en": "Yakuin",
+		"lines": [
+			17,
+			18
+		],
+		"refs": [
+			"N14",
+			"T02"
+		]
+	},
+	{
+		"id": 212,
+		"name": "渡辺通",
+		"name_kana": "わたなべどおり",
+		"name_en": "Watanabe-dori",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N15"
+		]
+	},
+	{
+		"id": 213,
+		"name": "天神南",
+		"name_kana": "てんじんみなみ",
+		"name_en": "Tenjin-minami",
+		"lines": [
+			17
+		],
+		"refs": [
+			"N16"
+		]
+	},
+	{
+		"id": 214,
+		"name": "西鉄福岡(天神)",
+		"name_kana": "にしてつふくおか(てんじん)",
+		"name_en": "Fukuoka(Tenjin)",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T01"
+		]
+	},
+	{
+		"id": 215,
+		"name": "西鉄平尾",
+		"name_kana": "にしてつひらお",
+		"name_en": "Hirao",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T03"
+		]
+	},
+	{
+		"id": 216,
+		"name": "高宮",
+		"name_kana": "たかみや",
+		"name_en": "Takamiya",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T04"
+		]
+	},
+	{
+		"id": 217,
+		"name": "大橋",
+		"name_kana": "おおはし",
+		"name_en": "Ohashi",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T05"
+		]
+	},
+	{
+		"id": 218,
+		"name": "井尻",
+		"name_kana": "いじり",
+		"name_en": "Ijiri",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T06"
+		]
+	},
+	{
+		"id": 219,
+		"name": "雑餉隈",
+		"name_kana": "ざっしょのくま",
+		"name_en": "Zasshonokuma",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T07"
+		]
+	},
+	{
+		"id": 220,
+		"name": "春日原",
+		"name_kana": "かすがばる",
+		"name_en": "Kasugabaru",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T09"
+		]
+	},
+	{
+		"id": 221,
+		"name": "白木原",
+		"name_kana": "しらきばる",
+		"name_en": "Shirakibaru",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T10"
+		]
+	},
+	{
+		"id": 222,
+		"name": "下大利",
+		"name_kana": "しもおおり",
+		"name_en": "Shimo-Ori",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T11"
+		]
+	},
+	{
+		"id": 223,
+		"name": "都府楼前",
+		"name_kana": "とふろうまえ",
+		"name_en": "Tofuro-Mae",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T12"
+		]
+	},
+	{
+		"id": 224,
+		"name": "西鉄二日市",
+		"name_kana": "にしてつふつかいち",
+		"name_en": "Futsukaichi",
+		"lines": [
+			18,
+			19
+		],
+		"refs": [
+			"T13",
+			"T13"
+		]
+	},
+	{
+		"id": 225,
+		"name": "紫",
+		"name_kana": "むらさき",
+		"name_en": "Murasaki",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T14"
+		]
+	},
+	{
+		"id": 226,
+		"name": "朝倉街道",
+		"name_kana": "あさくらがいどう",
+		"name_en": "Asakura-Gaido",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T15"
+		]
+	},
+	{
+		"id": 227,
+		"name": "桜台",
+		"name_kana": "さくらだい",
+		"name_en": "Sakuradai",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T16"
+		]
+	},
+	{
+		"id": 228,
+		"name": "筑紫",
+		"name_kana": "ちくし",
+		"name_en": "Chikushi",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T17"
+		]
+	},
+	{
+		"id": 229,
+		"name": "津古",
+		"name_kana": "つこ",
+		"name_en": "Tsuko",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T18"
+		]
+	},
+	{
+		"id": 230,
+		"name": "三国が丘",
+		"name_kana": "みくにがおか",
+		"name_en": "Mikunigaoka",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T19"
+		]
+	},
+	{
+		"id": 231,
+		"name": "三沢",
+		"name_kana": "みつさわ",
+		"name_en": "Mistsusawa",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T20"
+		]
+	},
+	{
+		"id": 232,
+		"name": "大保",
+		"name_kana": "おおほ",
+		"name_en": "Oho",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T21"
+		]
+	},
+	{
+		"id": 233,
+		"name": "西鉄小郡",
+		"name_kana": "にしてつおごおり",
+		"name_en": "Ogori",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T22"
+		]
+	},
+	{
+		"id": 234,
+		"name": "端間",
+		"name_kana": "はたま",
+		"name_en": "Hatama",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T23"
+		]
+	},
+	{
+		"id": 235,
+		"name": "味坂",
+		"name_kana": "あじさか",
+		"name_en": "Ajisaka",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T24"
+		]
+	},
+	{
+		"id": 236,
+		"name": "宮の陣",
+		"name_kana": "みやのじん",
+		"name_en": "Miyanojin",
+		"lines": [
+			18,
+			20
+		],
+		"refs": [
+			"T25",
+			"T25"
+		]
+	},
+	{
+		"id": 237,
+		"name": "櫛原",
+		"name_kana": "くしわら",
+		"name_en": "Kushiwara",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T26"
+		]
+	},
+	{
+		"id": 238,
+		"name": "西鉄久留米",
+		"name_kana": "にしてつくるめ",
+		"name_en": "Kurume",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T27"
+		]
+	},
+	{
+		"id": 239,
+		"name": "花畑",
+		"name_kana": "はなばたけ",
+		"name_en": "Hanabatake",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T28"
+		]
+	},
+	{
+		"id": 240,
+		"name": "試験場前",
+		"name_kana": "しけんじょうまえ",
+		"name_en": "Shikenjo-Mae",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T29"
+		]
+	},
+	{
+		"id": 241,
+		"name": "津福",
+		"name_kana": "つぶく",
+		"name_en": "Tsubuku",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T30"
+		]
+	},
+	{
+		"id": 242,
+		"name": "安武",
+		"name_kana": "やすたけ",
+		"name_en": "Yasutake",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T31"
+		]
+	},
+	{
+		"id": 243,
+		"name": "大善寺",
+		"name_kana": "だいぜんじ",
+		"name_en": "Daizenji",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T32"
+		]
+	},
+	{
+		"id": 244,
+		"name": "三潴",
+		"name_kana": "みずま",
+		"name_en": "Mizumaki",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T33"
+		]
+	},
+	{
+		"id": 245,
+		"name": "犬塚",
+		"name_kana": "いぬづか",
+		"name_en": "Inuzuka",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T34"
+		]
+	},
+	{
+		"id": 246,
+		"name": "大溝",
+		"name_kana": "おおみぞ",
+		"name_en": "Omizo",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T35"
+		]
+	},
+	{
+		"id": 247,
+		"name": "八丁牟田",
+		"name_kana": "はっちょうむた",
+		"name_en": "Hacchomuta",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T36"
+		]
+	},
+	{
+		"id": 248,
+		"name": "蒲池",
+		"name_kana": "かまち",
+		"name_en": "Kamachi",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T37"
+		]
+	},
+	{
+		"id": 249,
+		"name": "矢加部",
+		"name_kana": "やかべ",
+		"name_en": "Yakabe",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T38"
+		]
+	},
+	{
+		"id": 250,
+		"name": "西鉄柳川",
+		"name_kana": "にしてつやながわ",
+		"name_en": "Yanagawa",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T39"
+		]
+	},
+	{
+		"id": 251,
+		"name": "徳益",
+		"name_kana": "とくます",
+		"name_en": "Tokumasu",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T40"
+		]
+	},
+	{
+		"id": 252,
+		"name": "塩塚",
+		"name_kana": "しおづか",
+		"name_en": "Shiozuka",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T41"
+		]
+	},
+	{
+		"id": 253,
+		"name": "西鉄中島",
+		"name_kana": "にしてつなかしま",
+		"name_en": "Nakashima",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T42"
+		]
+	},
+	{
+		"id": 254,
+		"name": "江の浦",
+		"name_kana": "えのうら",
+		"name_en": "Enoura",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T43"
+		]
+	},
+	{
+		"id": 255,
+		"name": "開",
+		"name_kana": "ひらき",
+		"name_en": "Hiraki",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T44"
+		]
+	},
+	{
+		"id": 256,
+		"name": "西鉄渡瀬",
+		"name_kana": "にしてつわたぜ",
+		"name_en": "Wataze",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T45"
+		]
+	},
+	{
+		"id": 257,
+		"name": "倉永",
+		"name_kana": "くらなが",
+		"name_en": "Kuranaga",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T46"
+		]
+	},
+	{
+		"id": 258,
+		"name": "東甘木",
+		"name_kana": "ひがしあまぎ",
+		"name_en": "Higashi-Amagi",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T47"
+		]
+	},
+	{
+		"id": 259,
+		"name": "西鉄銀水",
+		"name_kana": "にしてつぎんすい",
+		"name_en": "Ginsui",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T48"
+		]
+	},
+	{
+		"id": 260,
+		"name": "新栄町",
+		"name_kana": "しんさかえまち",
+		"name_en": "Shin-Sakaemachi",
+		"lines": [
+			18
+		],
+		"refs": [
+			"T49"
+		]
+	},
+	{
+		"id": 261,
+		"name": "五条",
+		"name_kana": "ごじょう",
+		"name_en": "Gojo",
+		"lines": [
+			19
+		],
+		"refs": [
+			"D01"
+		]
+	},
+	{
+		"id": 262,
+		"name": "太宰府",
+		"name_kana": "だざいふ",
+		"name_en": "Dazaifu",
+		"lines": [
+			19
+		],
+		"refs": [
+			"D01"
+		]
+	},
+	{
+		"id": 263,
+		"name": "甘木",
+		"name_kana": "あまぎ",
+		"name_en": "Amagi",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A01"
+		]
+	},
+	{
+		"id": 264,
+		"name": "馬田",
+		"name_kana": "まだ",
+		"name_en": "Mada",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A02"
+		]
+	},
+	{
+		"id": 265,
+		"name": "上浦",
+		"name_kana": "かみうら",
+		"name_en": "Kamiura",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A03"
+		]
+	},
+	{
+		"id": 266,
+		"name": "本郷",
+		"name_kana": "ほんごう",
+		"name_en": "Hongo",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A04"
+		]
+	},
+	{
+		"id": 267,
+		"name": "大堰",
+		"name_kana": "おおぜき",
+		"name_en": "Ozeki",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A05"
+		]
+	},
+	{
+		"id": 268,
+		"name": "金島",
+		"name_kana": "かねしま",
+		"name_en": "Kaneshima",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A06"
+		]
+	},
+	{
+		"id": 269,
+		"name": "大城",
+		"name_kana": "おおき",
+		"name_en": "Oki",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A07"
+		]
+	},
+	{
+		"id": 270,
+		"name": "北野",
+		"name_kana": "きたの",
+		"name_en": "Kitano",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A08"
+		]
+	},
+	{
+		"id": 271,
+		"name": "古賀茶屋",
+		"name_kana": "こがんちゃや",
+		"name_en": "Koganchaya",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A09"
+		]
+	},
+	{
+		"id": 272,
+		"name": "学校前",
+		"name_kana": "がっこうまえ",
+		"name_en": "Gakko-Mae",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A10"
+		]
+	},
+	{
+		"id": 273,
+		"name": "五郎丸",
+		"name_kana": "ごろうまる",
+		"name_en": "Goromaru",
+		"lines": [
+			20
+		],
+		"refs": [
+			"A11"
+		]
+	},
+	{
+		"id": 274,
+		"name": "名島",
+		"name_kana": "なじま",
+		"name_en": "Najima",
+		"lines": [
+			21
+		],
+		"refs": [
+			"NK02"
+		]
+	},
+	{
+		"id": 275,
+		"name": "西鉄千早",
+		"name_kana": "にしてつちはや",
+		"name_en": "Chihaya",
+		"lines": [
+			21
+		],
+		"refs": [
+			"NK03"
+		]
+	},
+	{
+		"id": 276,
+		"name": "香椎宮前",
+		"name_kana": "かしいみやまえ",
+		"name_en": "Kashii-Miyamae",
+		"lines": [
+			21
+		],
+		"refs": [
+			"NK04"
+		]
+	},
+	{
+		"id": 277,
+		"name": "西鉄香椎",
+		"name_kana": "にしてつかしい",
+		"name_en": "Kashii",
+		"lines": [
+			21
+		],
+		"refs": [
+			"NK05"
+		]
+	},
+	{
+		"id": 278,
+		"name": "香椎花園前",
+		"name_kana": "かしいかえんまえ",
+		"name_en": "Kashii-Kaenmae",
+		"lines": [
+			21
+		],
+		"refs": [
+			"NK06"
+		]
+	},
+	{
+		"id": 279,
+		"name": "唐の原",
+		"name_kana": "とうのはる",
+		"name_en": "Tonoharu",
+		"lines": [
+			21
+		],
+		"refs": [
+			"NK07"
+		]
+	},
+	{
+		"id": 280,
+		"name": "三苫",
+		"name_kana": "みとま",
+		"name_en": "Wajiro",
+		"lines": [
+			21
+		],
+		"refs": [
+			"NK09"
+		]
+	},
+	{
+		"id": 281,
+		"name": "西鉄新宮",
+		"name_kana": "にしてつしんぐう",
+		"name_en": "Shingu",
+		"lines": [
+			21
+		],
+		"refs": [
+			"NK10"
+		]
+	},
+	{
+		"id": 282,
+		"name": "平和通",
+		"name_kana": "へいわどおり",
+		"name_en": "Heiwa-dori",
+		"lines": [
+			22
+		],
+		"refs": [
+			"02"
+		]
+	},
+	{
+		"id": 283,
+		"name": "旦過",
+		"name_kana": "たんが",
+		"name_en": "Tanga Ichiba-mae",
+		"lines": [
+			22
+		],
+		"refs": [
+			"03"
+		]
+	},
+	{
+		"id": 284,
+		"name": "香春口三萩野",
+		"name_kana": "かわらぐちみはぎのｐ",
+		"name_en": "Kawaraguchi Mihagino",
+		"lines": [
+			22
+		],
+		"refs": [
+			"04"
+		]
+	},
+	{
+		"id": 285,
+		"name": "片野",
+		"name_kana": "かたの",
+		"name_en": "Katano",
+		"lines": [
+			22
+		],
+		"refs": [
+			"05"
+		]
+	},
+	{
+		"id": 286,
+		"name": "城野",
+		"name_kana": "じょうの",
+		"name_en": "Jono",
+		"lines": [
+			22
+		],
+		"refs": [
+			"06"
+		]
+	},
+	{
+		"id": 287,
+		"name": "北方",
+		"name_kana": "きたがた",
+		"name_en": "Kitagata",
+		"lines": [
+			22
+		],
+		"refs": [
+			"07"
+		]
+	},
+	{
+		"id": 288,
+		"name": "競馬場前",
+		"name_kana": "けいばじょうまえ",
+		"name_en": "Keibajo-mae",
+		"lines": [
+			22
+		],
+		"refs": [
+			"08"
+		]
+	},
+	{
+		"id": 289,
+		"name": "守恒",
+		"name_kana": "もりつね",
+		"name_en": "Moritsune",
+		"lines": [
+			22
+		],
+		"refs": [
+			"09"
+		]
+	},
+	{
+		"id": 290,
+		"name": "徳力公団前",
+		"name_kana": "とくりきこうだんまえ",
+		"name_en": "Tokuriki kodan-mae",
+		"lines": [
+			22
+		],
+		"refs": [
+			"10"
+		]
+	},
+	{
+		"id": 291,
+		"name": "徳力嵐山口",
+		"name_kana": "とくりきあらしやまぐち",
+		"name_en": "Tokuriki Arashiyamaguchi",
+		"lines": [
+			22
+		],
+		"refs": [
+			"11"
+		]
+	},
+	{
+		"id": 292,
+		"name": "志井",
+		"name_kana": "しい",
+		"name_en": "Shii",
+		"lines": [
+			22
+		],
+		"refs": [
+			"12"
+		]
+	},
+	{
+		"id": 293,
+		"name": "企救丘",
+		"name_kana": "きくがおか",
+		"name_en": "Kikugaoka",
+		"lines": [
+			22
+		],
+		"refs": [
+			"13"
+		]
+	},
+	{
+		"id": 294,
+		"name": "黒崎駅前",
+		"name_kana": "くろさきえきまえ",
+		"name_en": "Kurosaki-ekimae",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK01"
+		]
+	},
+	{
+		"id": 295,
+		"name": "西黒崎",
+		"name_kana": "にしくろさき",
+		"name_en": "Nishi Kurosaki",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK02"
+		]
+	},
+	{
+		"id": 296,
+		"name": "熊西",
+		"name_kana": "くまにし",
+		"name_en": "Kumanishi",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK03"
+		]
+	},
+	{
+		"id": 297,
+		"name": "萩原",
+		"name_kana": "はぎわら",
+		"name_en": "Hagiwara",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK04"
+		]
+	},
+	{
+		"id": 298,
+		"name": "穴生",
+		"name_kana": "あのお",
+		"name_en": "Anoo",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK05"
+		]
+	},
+	{
+		"id": 299,
+		"name": "森下",
+		"name_kana": "もりした",
+		"name_en": "Morishita",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK06"
+		]
+	},
+	{
+		"id": 300,
+		"name": "今池",
+		"name_kana": "いまいけ",
+		"name_en": "Imaike",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK07"
+		]
+	},
+	{
+		"id": 301,
+		"name": "永犬丸",
+		"name_kana": "えいのまる",
+		"name_en": "Einomaru",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK08"
+		]
+	},
+	{
+		"id": 302,
+		"name": "三ヶ森",
+		"name_kana": "さんがもり",
+		"name_en": "Sangamori",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK09"
+		]
+	},
+	{
+		"id": 303,
+		"name": "西山",
+		"name_kana": "にしやま",
+		"name_en": "Nishiyama",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK10"
+		]
+	},
+	{
+		"id": 304,
+		"name": "通谷",
+		"name_kana": "とおりたに",
+		"name_en": "Toritani",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK11"
+		]
+	},
+	{
+		"id": 305,
+		"name": "東中間",
+		"name_kana": "ひがしなかま",
+		"name_en": "Higashi Nakama",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK12"
+		]
+	},
+	{
+		"id": 306,
+		"name": "筑豊中間",
+		"name_kana": "ちくほうなかま",
+		"name_en": "Chikuho Nakama",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK13"
+		]
+	},
+	{
+		"id": 307,
+		"name": "希望が丘高校前",
+		"name_kana": "きぼうがおかこうこうまえ",
+		"name_en": "Kibogaoka-Kokomae",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK14"
+		]
+	},
+	{
+		"id": 308,
+		"name": "筑豊香月",
+		"name_kana": "ちくほうかつき",
+		"name_en": "Chikuho Katsuki",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK15"
+		]
+	},
+	{
+		"id": 309,
+		"name": "楠橋",
+		"name_kana": "くすばし",
+		"name_en": "Kusubashi",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK16"
+		]
+	},
+	{
+		"id": 310,
+		"name": "新木屋瀬",
+		"name_kana": "しんこやのせ",
+		"name_en": "Shin Koyanose",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK17"
+		]
+	},
+	{
+		"id": 311,
+		"name": "木屋瀬",
+		"name_kana": "こやのせ",
+		"name_en": "Koyanose",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK18"
+		]
+	},
+	{
+		"id": 312,
+		"name": "遠賀野",
+		"name_kana": "おんがの",
+		"name_en": "Ongano",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK19"
+		]
+	},
+	{
+		"id": 313,
+		"name": "感田",
+		"name_kana": "がんだ",
+		"name_en": "Ganda",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK20"
+		]
+	},
+	{
+		"id": 314,
+		"name": "筑豊直方",
+		"name_kana": "ちくほうのおがた",
+		"name_en": "Chikuho Nogata",
+		"lines": [
+			23
+		],
+		"refs": [
+			"CK21"
+		]
+	},
+	{
+		"id": 315,
+		"name": "立野",
+		"name_kana": "たての",
+		"name_en": "Tateno",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 316,
+		"name": "小郡",
+		"name_kana": "おごおり",
+		"name_en": "Ogori",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 317,
+		"name": "大板井",
+		"name_kana": "おおいたい",
+		"name_en": "Oitai",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 318,
+		"name": "松崎",
+		"name_kana": "まつざき",
+		"name_en": "Matsuzaki",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 319,
+		"name": "今隈",
+		"name_kana": "いまぐま",
+		"name_en": "Imaguma",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 320,
+		"name": "西太刀洗",
+		"name_kana": "にしたちあらい",
+		"name_en": "Nishi-Tachiarai",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 321,
+		"name": "山隈",
+		"name_kana": "やまぐま",
+		"name_en": "Yamaguma",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 322,
+		"name": "太刀洗",
+		"name_kana": "たちあらい",
+		"name_en": "Tachiarai",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 323,
+		"name": "高田",
+		"name_kana": "たかた",
+		"name_en": "Takata",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 324,
+		"name": "甘木",
+		"name_kana": "あまぎ",
+		"name_en": "Amagi",
+		"lines": [
+			24
+		]
+	},
+	{
+		"id": 325,
+		"name": "南直方御殿口",
+		"name_kana": "みなみのおがたごてんぐち",
+		"name_en": "Minami Nogaata Gotenguchi",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC2"
+		]
+	},
+	{
+		"id": 326,
+		"name": "あかぢ",
+		"name_kana": "あかぢ",
+		"name_en": "Akaji",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC3"
+		]
+	},
+	{
+		"id": 327,
+		"name": "藤棚",
+		"name_kana": "ふじだな",
+		"name_en": "Fujidana",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC4"
+		]
+	},
+	{
+		"id": 328,
+		"name": "中泉",
+		"name_kana": "なかいずみ",
+		"name_en": "Nakaizumi",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC5"
+		]
+	},
+	{
+		"id": 329,
+		"name": "市場",
+		"name_kana": "いちば",
+		"name_en": "Ichiba",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC6"
+		]
+	},
+	{
+		"id": 330,
+		"name": "ふれあい生力",
+		"name_kana": "ふれあいしょうりき",
+		"name_en": "Fureai Shoriki",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC7"
+		]
+	},
+	{
+		"id": 331,
+		"name": "赤池",
+		"name_kana": "あかいけ",
+		"name_en": "Akaike",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC8"
+		]
+	},
+	{
+		"id": 332,
+		"name": "人見",
+		"name_kana": "ひとみ",
+		"name_en": "Hitomi",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC9"
+		]
+	},
+	{
+		"id": 333,
+		"name": "金田",
+		"name_kana": "かなだ",
+		"name_en": "Kanada",
+		"lines": [
+			25,
+			26
+		],
+		"refs": [
+			"HC10",
+			"HC10"
+		]
+	},
+	{
+		"id": 334,
+		"name": "上金田",
+		"name_kana": "かみかなだ",
+		"name_en": "Kami Kanada",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC11"
+		]
+	},
+	{
+		"id": 335,
+		"name": "糒",
+		"name_kana": "ほしい",
+		"name_en": "Hoshii",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC12"
+		]
+	},
+	{
+		"id": 336,
+		"name": "田川市立病院",
+		"name_kana": "たがわしりつびょういん",
+		"name_en": "Tagawa Municipal Hospital",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC13"
+		]
+	},
+	{
+		"id": 337,
+		"name": "下伊田",
+		"name_kana": "しもいた",
+		"name_en": "Shimoita",
+		"lines": [
+			25
+		],
+		"refs": [
+			"HC14"
+		]
+	},
+	{
+		"id": 338,
+		"name": "豊前大熊",
+		"name_kana": "ぶぜんおおくま",
+		"name_en": "Buzen Okuma",
+		"lines": [
+			26
+		],
+		"refs": [
+			"HC51"
+		]
+	},
+	{
+		"id": 339,
+		"name": "松山",
+		"name_kana": "まつやま",
+		"name_en": "Matsuyama",
+		"lines": [
+			26
+		],
+		"refs": [
+			"HC52"
+		]
+	},
+	{
+		"id": 340,
+		"name": "糸田",
+		"name_kana": "いとだ",
+		"name_en": "Itoda",
+		"lines": [
+			26
+		],
+		"refs": [
+			"HC53"
+		]
+	},
+	{
+		"id": 341,
+		"name": "大藪",
+		"name_kana": "おおやぶ",
+		"name_en": "Oyabu",
+		"lines": [
+			26
+		],
+		"refs": [
+			"HC54"
+		]
+	},
+	{
+		"id": 342,
+		"name": "令和コスタ行橋",
+		"name_kana": "れいわこすたゆくはし",
+		"name_en": "Reiwa-Costa-Yukuhashi",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC30"
+		]
+	},
+	{
+		"id": 343,
+		"name": "美夜古泉",
+		"name_kana": "みやこいずみ",
+		"name_en": "Miyako Izumi",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC29"
+		]
+	},
+	{
+		"id": 344,
+		"name": "今川河童",
+		"name_kana": "いまがわかっぱ",
+		"name_en": "Imagawa Kappa",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC28"
+		]
+	},
+	{
+		"id": 345,
+		"name": "豊津",
+		"name_kana": "とよつ",
+		"name_en": "Toyotsu",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC27"
+		]
+	},
+	{
+		"id": 346,
+		"name": "新豊津",
+		"name_kana": "しんとよつ",
+		"name_en": "Shin-Toyotsu",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC26"
+		]
+	},
+	{
+		"id": 347,
+		"name": "東犀川三四郎",
+		"name_kana": "ひがしさいがわさんしろう",
+		"name_en": "Higashi Saigawa Sanshiro",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC25"
+		]
+	},
+	{
+		"id": 348,
+		"name": "犀川",
+		"name_kana": "さいがわ",
+		"name_en": "Saigawa",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC24"
+		]
+	},
+	{
+		"id": 349,
+		"name": "崎山",
+		"name_kana": "さきやま",
+		"name_en": "Sakiyama",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC23"
+		]
+	},
+	{
+		"id": 350,
+		"name": "源じいの森",
+		"name_kana": "げんじいのもり",
+		"name_en": "Genjii No Mori",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC22"
+		]
+	},
+	{
+		"id": 351,
+		"name": "油須原",
+		"name_kana": "ゆすばる",
+		"name_en": "Yusubaru",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC21"
+		]
+	},
+	{
+		"id": 352,
+		"name": "赤",
+		"name_kana": "あか",
+		"name_en": "Aka",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC20"
+		]
+	},
+	{
+		"id": 353,
+		"name": "内田",
+		"name_kana": "うちだ",
+		"name_en": "Uchida",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC19"
+		]
+	},
+	{
+		"id": 354,
+		"name": "柿下温泉口",
+		"name_kana": "かきしたおんせんぐち",
+		"name_en": "Kakishita Onsen Guchi",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC18"
+		]
+	},
+	{
+		"id": 355,
+		"name": "勾金",
+		"name_kana": "まがりがね",
+		"name_en": "Magarigane",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC17"
+		]
+	},
+	{
+		"id": 356,
+		"name": "上伊田",
+		"name_kana": "かみいた",
+		"name_en": "Kamiita",
+		"lines": [
+			27
+		],
+		"refs": [
+			"HC16"
+		]
+	},
+	{
+		"id": 357,
+		"name": "九州鉄道記念館",
+		"name_kana": "きゅうしゅうてつどうきねんかん",
+		"name_en": "Kyushu Tetsudo Kinenkan",
+		"lines": [
+			28
+		]
+	},
+	{
+		"id": 358,
+		"name": "出光美術館",
+		"name_kana": "いでみつびじゅつかん",
+		"name_en": "Idemitsu Bijutsukan",
+		"lines": [
+			28
+		]
+	},
+	{
+		"id": 359,
+		"name": "ノーフォーク広場",
+		"name_kana": "のーふぉーくひろば",
+		"name_en": "Norfolk Hiroba",
+		"lines": [
+			28
+		]
+	},
+	{
+		"id": 360,
+		"name": "関門海峡めかり",
+		"name_kana": "かんもんかいきょうめかり",
+		"name_en": "Kanmonkaikyo Mekari",
+		"lines": [
+			28
+		]
+	},
+	{
+		"id": 361,
+		"name": "下関",
+		"name_kana": "しものせき",
+		"name_en": "Shimonoseki",
+		"lines": [
+			2
+		],
+		"refs": [
+			"JA53"
+		]
+	}
+]
