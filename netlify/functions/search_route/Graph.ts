@@ -11,10 +11,8 @@ interface Edge {
 export class Graph {
     // 隣接する駅のリスト。キーがStation、値が<行き先の駅, Edgeクラス>のMap
     private routeMap: Array<Edge>
-    private lineList: LineList
-    constructor(lineList: LineList) {
+    constructor() {
         this.routeMap = new Array()
-        this.lineList = lineList
     }
     public addEdge(node1: Station, node2: Station, cost: number, line: Line) {
         this.routeMap.push({
@@ -25,7 +23,7 @@ export class Graph {
         })
     }
 
-    public getEdgesFromStation(station: Station, useBulletTrain: boolean = true, useJR: boolean = true, 
+    public getEdgesFromStation(station: Station, useBulletTrain: boolean = true, useJR: boolean = true,
         usePrivateTrain: boolean = true, useSubwayAndMonorail: boolean = true): Array<Edge> {
         let result: Array<Edge> = new Array()
         for (const edge of this.routeMap) {
@@ -48,18 +46,18 @@ export class Dijkstra {
         this.graph = graph
     }
 
-    public findRoute(origin: Station, destination: Station, useBulletTrain: boolean = true, useJR: boolean = true, 
+    public findRoute(origin: Station, destination: Station, useBulletTrain: boolean = true, useJR: boolean = true,
         usePrivateTrain: boolean = true, useSubwayAndMonorail: boolean = true, transferTime: number = 0,
         transferCost: number = 0) {
         const distances = new Distances(transferTime, transferCost)
         let currentStation = origin
         let distanceToCurrentStation = 0, costToCurrentStation = 0
         let n = 0
-        while (n<=1000) {
+        while (n <= 1000) {
             const edgesFromCurrentStation = this.graph.getEdgesFromStation(currentStation, useBulletTrain,
                 useJR, usePrivateTrain, useSubwayAndMonorail)
             for (const edge of edgesFromCurrentStation) {
-                distances.setDistanceIfCostIsMinimum(edge.destination, distanceToCurrentStation + edge.time, 
+                distances.setDistanceIfCostIsMinimum(edge.destination, distanceToCurrentStation + edge.time,
                     costToCurrentStation + edge.time, currentStation, edge)
             }
             const minCostStation = distances.getMinCostStation(true)
@@ -81,7 +79,7 @@ export class Dijkstra {
         const resultCostList: Array<number> = new Array()
         if (typeof distanceToDestination?.previousEdge === 'undefined') return false
         let resultStationList: Array<Station> = [currentStation]
-        while (n<=1000) {
+        while (n <= 1000) {
             const distanceProperties = distances.getDistanceOfStation(currentStation)
             const from = distanceProperties?.from
             if (!from || !distanceProperties.previousEdge) throw new Error('Cannot find "from" staton')
@@ -94,7 +92,7 @@ export class Dijkstra {
             n++
         }
         resultTimeList.unshift(0)
-        return {times: resultTimeList, stations: resultStationList, edges: resultEdgeList, costs: resultCostList}
+        return { times: resultTimeList, stations: resultStationList, edges: resultEdgeList, costs: resultCostList }
     }
 }
 
@@ -118,7 +116,7 @@ class Distances {
         this.previousEdgeOfStation = new Map()
     }
     getDistanceOfStation(station: Station): DistanceProperties | null {
-        for(const cost of this.distances) {
+        for (const cost of this.distances) {
             if (cost.station === station) return cost
         }
         return null
