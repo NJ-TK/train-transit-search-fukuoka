@@ -1,4 +1,5 @@
 import { Station } from "./Station"
+import { Line } from "./Line"
 
 export class Graph {
     // 隣接する駅のリスト。キーがStation、値が<行き先の駅, そこまでのコスト>のMap
