@@ -5,7 +5,7 @@ import path from 'path'
 import { Line } from "./Line"
 import { Station } from "./Station"
 import { LineList, StationList } from './mapElementLists'
-import { Graph } from "./Graph"
+import { Dijkstra, Graph } from "./Graph"
 
 export const handler: Handler = async (event: any, _context: any) => {
     const lineJsonPath = '../route-db/lines.json'
@@ -18,21 +18,17 @@ export const handler: Handler = async (event: any, _context: any) => {
         const lineJsonPath_ = path.resolve(__dirname, lineJsonPath);
         const lineJson = fs.readFileSync(lineJsonPath_, 'utf-8');
         const rawLineList = JSON.parse(lineJson)
-        
+
         const stationJsonPath_ = path.resolve(__dirname, stationJsonPath);
         const stationJson = fs.readFileSync(stationJsonPath_, 'utf-8');
         const rawStationList = JSON.parse(stationJson)
 
         const routeJsonPath_ = path.resolve(__dirname, routeJsonPath);
         const routeJson = fs.readFileSync(routeJsonPath_, 'utf-8');
-        const routes = JSON.parse(routeJson)
-
-        const graph = new Graph()
+        const rawRouteList = JSON.parse(routeJson)
 
         const lineList = new LineList()
         for (const line_ of rawLineList) {
-            if (!line_.id || !line_.name || typeof line_.id !== 'number') continue
-
             const line = new Line(line_.id, line_.name, line_.kana, line_.name_en)
             if (typeof line_.color === 'string') line.color = line_.color
             if (typeof line_.owner === 'string') line.owner = line_.owner
@@ -47,10 +43,7 @@ export const handler: Handler = async (event: any, _context: any) => {
         }
 
         const stationList = new StationList()
-
         for (const station_ of rawStationList) {
-            if (!station_.id || !station_.name || typeof station_.id !== 'number') continue
-
             const station = new Station(station_.id, station_.name, station_.name_kana, station_.name_en)
             station_.lines.forEach((lineId: number, index: number) => {
                 const line = lineList.getLineById(lineId)
@@ -61,6 +54,25 @@ export const handler: Handler = async (event: any, _context: any) => {
 
             stationList.addStation(station)
         }
+
+        console.log('計算開始')
+        const graph = new Graph()
+        graph.createNodeListFromStationList(stationList)
+        for (const route_ of rawRouteList) {
+            graph.addEdge(stationList.getStationById(route_.start), stationList.getStationById(route_.end),
+                route_.time, lineList.getLineById(route_.line))
+            if (route_.is_reversible) {
+                graph.addEdge(stationList.getStationById(route_.end), stationList.getStationById(route_.start),
+                    route_.time, lineList.getLineById(route_.line))
+            }
+        }
+
+        const dijkstra = new Dijkstra(graph)
+        const o = 3, d = 15
+        const originStation = stationList.getStationById(o), destinationStation = stationList.getStationById(d)
+        console.log(`${originStation.name}→${destinationStation.name}`)
+        const result = dijkstra.getShortestRoute(originStation, destinationStation)
+        // console.log(result)
 
         return {
             statusCode: 200,

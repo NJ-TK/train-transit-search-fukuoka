@@ -6,7 +6,7 @@ export class LineList {
     constructor() {
         this.lineList = {}
     }
-    
+
     public addLine(line: Line) {
         if (this.lineList[line.id]) throw new Error(`すでにID${line.id}の路線は存在しています`)
         this.lineList[line.id] = line
@@ -17,16 +17,22 @@ export class LineList {
 }
 
 export class StationList {
-    private stationList: Record<number, Station>
+    private _stationList: Record<number, Station>
     constructor() {
-        this.stationList = {}
+        this._stationList = {}
     }
-    
+
     public addStation(station: Station) {
-        if (this.stationList[station.id]) throw new Error(`すでにID${station.id}の駅は存在しています`)
-        this.stationList[station.id] = station
+        if (this._stationList[station.id]) throw new Error(`すでにID${station.id}の駅は存在しています`)
+        this._stationList[station.id] = station
     }
     public getStationById(id: number) {
-        return this.stationList[id]
+        return this._stationList[id]
+    }
+    get length() {
+        return Object.keys(this._stationList).length
+    }
+    get idList() {
+        return Object.keys(this._stationList).map((k) => Number(k))
     }
 }
