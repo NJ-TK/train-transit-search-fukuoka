@@ -1,41 +1,45 @@
 import { Station } from "./Station"
 import { Line } from "./Line"
-import { StationList } from "./mapElementLists"
+import { LineList, StationList } from "./mapElementLists"
 
+interface Edge {
+    origin: Station
+    destination: Station
+    time: number
+    line: Line
+}
 export class Graph {
     // 隣接する駅のリスト。キーがStation、値が<行き先の駅, Edgeクラス>のMap
-    private _adjencyList: Map<Station, Map<Station, { cost: number, line: Line }>>
-    constructor() {
-        this._adjencyList = new Map()
+    private routeMap: Array<Edge>
+    private lineList: LineList
+    constructor(lineList: LineList) {
+        this.routeMap = new Array()
+        this.lineList = lineList
     }
-
-    public addNode(station: Station) {
-        if (!this._adjencyList.has(station)) this._adjencyList.set(station, new Map())
-    }
-
-    public createNodeListFromStationList(stationList: StationList) {
-        for (const id of stationList.idList) {
-            const station = stationList.getStationById(id)
-            this.addNode(station)
-        }
-    }
-
     public addEdge(node1: Station, node2: Station, cost: number, line: Line) {
-        if (!this._adjencyList.has(node1)) throw new Error('Node1がグラフ上にありません！')
-        const nodeNeighbors: Map<Station, { cost: number, line: Line }> = this._adjencyList.get(node1) || new Map()
-        nodeNeighbors.set(node2, { cost, line })
-        this._adjencyList.set(node1, nodeNeighbors)
+        this.routeMap.push({
+            origin: node1,
+            destination: node2,
+            time: cost,
+            line: line
+        })
     }
 
-    public getNeighbors(station: Station) {
-        return this._adjencyList.get(station)?.keys()
-    }
+    public getEdgesFromStation(station: Station, useBulletTrain: boolean = true, useJR: boolean = true, 
+        usePrivateTrain: boolean = true, useSubwayAndMonorail: boolean = true): Array<Edge> {
+        let result: Array<Edge> = new Array()
+        for (const edge of this.routeMap) {
+            if (!useBulletTrain && edge.line.type === 'bullet') continue
+            if (!useJR && edge.line.type === 'JR') continue
+            if (!usePrivateTrain && edge.line.type === 'private') continue
+            if (!useSubwayAndMonorail && (edge.line.type === 'subway' || edge.line.type === 'monorail')) continue
 
-    public getEdge(node1: Station, node2: Station) {
-        return this._adjencyList.get(node1)?.get(node2)
+            if (edge.origin === station) {
+                result.push(edge)
+            }
+        }
+        return result
     }
-
-    get adjencyList() { return this._adjencyList }
 }
 
 export class Dijkstra {
@@ -44,80 +48,140 @@ export class Dijkstra {
         this.graph = graph
     }
 
-    getShortestRoute(originNode: Station, destinationNode: Station) {
-        const distances: Map<Station, number> = new Map()
-        const previousNodes: Map<Station, Station | null> = new Map()
-        const priorityQueue = new PriorityQueue()
-
-        // グラフの初期化
-        for (const node of this.graph.adjencyList.keys()) {
-            distances.set(node, ( node === originNode ? 0 : Infinity ))
-            previousNodes.set(node, null)
-            const distanceToEnqueue: number = distances.get(node) || Infinity 
-            priorityQueue.enqueue(node, distanceToEnqueue)
+    public findRoute(origin: Station, destination: Station, useBulletTrain: boolean = true, useJR: boolean = true, 
+        usePrivateTrain: boolean = true, useSubwayAndMonorail: boolean = true, transferTime: number = 0,
+        transferCost: number = 0) {
+        const distances = new Distances(transferTime, transferCost)
+        let currentStation = origin
+        let distanceToCurrentStation = 0, costToCurrentStation = 0
+        let n = 0
+        while (n<=1000) {
+            const edgesFromCurrentStation = this.graph.getEdgesFromStation(currentStation, useBulletTrain,
+                useJR, usePrivateTrain, useSubwayAndMonorail)
+            for (const edge of edgesFromCurrentStation) {
+                distances.setDistanceIfCostIsMinimum(edge.destination, distanceToCurrentStation + edge.time, 
+                    costToCurrentStation + edge.time, currentStation, edge)
+            }
+            const minCostStation = distances.getMinCostStation(true)
+            if (!minCostStation) break
+            currentStation = minCostStation
+            const costProperties = distances.getDistanceOfStation(currentStation)
+            if (!costProperties) throw new Error('Cannot Find Distance Data')
+            distanceToCurrentStation = costProperties.distance
+            costToCurrentStation = costProperties.cost
+            n++
         }
 
-        // コスト最小ルートの計算
-        let calculateCount = 0
-        while (!priorityQueue.isEmpty() && calculateCount < 1000) {
-            let node = priorityQueue.dequeue()
-            if (typeof node === 'undefined') throw new Error('ルート探索中にエラー')
-            console.log(node.name)
-            
-            // 目的地に到達したら、逆順にたどって経路を返す
-            if (node === destinationNode) {
-                const route: Station[] = new Array()
-                const newNode = previousNodes.get(node)
-                let calculateCount_ = 0
-                while (newNode !== null && calculateCount_ < 10000) {
-                    route.unshift(node)
-                    node = newNode
-                    if (typeof node === 'undefined') throw new Error('結果計算中にエラー')
-                    calculateCount_ ++
-                    if (calculateCount_ >= 10000) console.log(`${node.name}の計算中に死亡`)
-                }
-                route.unshift(originNode)
-                return { route, distance: distances.get(destinationNode) }
-            }
-
-            const neighbors = this.graph.getNeighbors(node)
-            if (typeof neighbors === 'undefined') throw new Error('近傍ノードの取得時にエラー')
-            for (const neighbor of neighbors) {
-                const currentDistance = distances.get(node)
-                const additionalDistance = this.graph.getEdge(node, neighbor)?.cost
-                const neighborDistance = distances.get(neighbor)
-                if (typeof currentDistance === 'undefined' || typeof additionalDistance === 'undefined' ||
-                    typeof neighborDistance === 'undefined') {
-                    throw new Error('コストの計算中にエラー')
-                }
-                const newDistance = currentDistance + additionalDistance
-
-                if (newDistance < neighborDistance) {
-                    distances.set(neighbor, newDistance)
-                    previousNodes.set(neighbor, node)
-                    priorityQueue.enqueue(neighbor, newDistance)
-                }
-            }
-            calculateCount++
-
+        // 逆にたどって経路を求める
+        n = 0
+        currentStation = destination
+        const distanceToDestination = distances.getDistanceOfStation(destination)
+        const resultEdgeList: Array<Edge> = new Array()
+        const resultTimeList: Array<number> = new Array()
+        const resultCostList: Array<number> = new Array()
+        if (typeof distanceToDestination?.previousEdge === 'undefined') return false
+        let resultStationList: Array<Station> = [currentStation]
+        while (n<=1000) {
+            const distanceProperties = distances.getDistanceOfStation(currentStation)
+            const from = distanceProperties?.from
+            if (!from || !distanceProperties.previousEdge) throw new Error('Cannot find "from" staton')
+            currentStation = from
+            resultTimeList.unshift(distanceProperties.distance)
+            resultCostList.unshift(distanceProperties.cost)
+            resultStationList.unshift(currentStation)
+            resultEdgeList.unshift(distanceProperties.previousEdge)
+            if (currentStation === origin) break
+            n++
         }
-
-        // 到達不能
-        return { route: new Array(), distance: Infinity }
+        resultTimeList.unshift(0)
+        return {times: resultTimeList, stations: resultStationList, edges: resultEdgeList, costs: resultCostList}
     }
 }
 
-class PriorityQueue {
-    private nodes: Array<{ node: Station; priority: number }> = new Array()
-
-    enqueue(node: Station, priority: number) {
-        this.nodes.push({ node, priority })
-        this.sort()
+interface DistanceProperties {
+    station: Station
+    cost: number
+    distance: number
+    from: Station | null
+    previousEdge: Edge | null
+    isSmallest: boolean
+}
+class Distances {
+    private _transferTime: number
+    private _transferCost: number
+    private distances: Array<DistanceProperties>
+    private previousEdgeOfStation: Map<Station, Edge>
+    constructor(transferTime: number = 0, transferCost: number = transferTime) {
+        this._transferTime = transferTime
+        this._transferCost = transferCost
+        this.distances = new Array()
+        this.previousEdgeOfStation = new Map()
     }
-    dequeue() { return this.nodes.shift()?.node }
-    isEmpty() { return this.nodes.length === 0 }
+    getDistanceOfStation(station: Station): DistanceProperties | null {
+        for(const cost of this.distances) {
+            if (cost.station === station) return cost
+        }
+        return null
+    }
+    setDistanceIfCostIsMinimum(station: Station, distance: number, cost: number, previousStation: Station, previousEdge: Edge) {
+        let additionalDistance = 0, additionalCost = 0 // 乗換によって加算される
+        if (this._transferCost) {
+            const secondPreviousEdge = this.previousEdgeOfStation.get(previousStation)
+            if (secondPreviousEdge) {
+                if (previousEdge.line !== secondPreviousEdge.line) {
+                    // 乗換直後の停車駅ならば
+                    additionalDistance = this._transferTime
+                    additionalCost = this._transferCost
+                }
+            }
+        }
 
-    private sort() {
-        this.nodes.sort((a, b) => a.priority - b.priority)
+        const currentDistancePropaties = this.getDistanceOfStation(station)
+        if (currentDistancePropaties) {
+            if (cost + additionalCost < currentDistancePropaties.cost) {
+                // 今までのコストより小さければ書き直す
+                currentDistancePropaties.cost = cost + additionalCost
+                currentDistancePropaties.distance = distance + additionalDistance
+                currentDistancePropaties.from = previousStation
+                currentDistancePropaties.previousEdge = previousEdge
+            }
+        } else {
+            // まだその駅に関するdistanceデータがなければ追加
+            this.distances.push({
+                station: station,
+                cost: cost + additionalCost,
+                distance: distance + additionalDistance,
+                from: previousStation,
+                previousEdge: previousEdge,
+                isSmallest: false
+            })
+        }
+    }
+    setIsSmallestOfStation(station: Station, isSmallest: boolean) {
+        const distanceProperties = this.getDistanceOfStation(station)
+        if (distanceProperties) {
+            distanceProperties.isSmallest = isSmallest
+        } else {
+            // まだその駅に関するdistanceデータがなければ追加
+            this.distances.push({
+                station: station,
+                cost: Infinity,
+                distance: Infinity,
+                from: null,
+                previousEdge: null,
+                isSmallest: isSmallest
+            })
+        }
+    }
+    getMinCostStation(setIsSmallestOfMinCostStation: boolean = false): Station | null {
+        let minCost = Infinity, minCostStation = null
+        for (const costProperties of this.distances) {
+            if (!costProperties.isSmallest && (costProperties.cost < minCost)) {
+                minCost = costProperties.cost
+                if (setIsSmallestOfMinCostStation) costProperties.isSmallest = true
+                return costProperties.station
+            }
+        }
+        return null
     }
 }

@@ -17,7 +17,7 @@ export class Line {
 
     get id() { return this._id }
     set type(t: string | undefined) {
-        const availableTypes = ['uJR', 'private', 'bullet', 'subway', 'monorail', 'tram', 'sightseeing']
+        const availableTypes = ['JR', 'private', 'bullet', 'subway', 'monorail', 'tram', 'sightseeing']
         if (typeof t === 'undefined' || availableTypes.includes(t)) {
             this._type = t
         } else {

@@ -57,7 +57,7 @@ export const handler: Handler = async (event: any, _context: any) => {
 
         console.log('計算開始')
         const graph = new Graph()
-        graph.createNodeListFromStationList(stationList)
+        
         for (const route_ of rawRouteList) {
             graph.addEdge(stationList.getStationById(route_.start), stationList.getStationById(route_.end),
                 route_.time, lineList.getLineById(route_.line))
@@ -71,8 +71,8 @@ export const handler: Handler = async (event: any, _context: any) => {
         const o = 3, d = 15
         const originStation = stationList.getStationById(o), destinationStation = stationList.getStationById(d)
         console.log(`${originStation.name}→${destinationStation.name}`)
-        const result = dijkstra.getShortestRoute(originStation, destinationStation)
-        // console.log(result)
+        const result = dijkstra.findRoute(originStation, destinationStation)
+        console.log(result)
 
         return {
             statusCode: 200,
