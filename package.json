@@ -17,5 +17,8 @@
     "nuxt": "^3.8.2",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "nuxt-material-design-icons-iconfont": "^1.0.2"
   }
 }
