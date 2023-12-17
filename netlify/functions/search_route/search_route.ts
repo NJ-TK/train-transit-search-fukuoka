@@ -12,7 +12,8 @@ export const handler: Handler = async (event: any, _context: any) => {
     const stationJsonPath = '../route-db/stations.json'
     const routeJsonPath = '../route-db/routes.json'
 
-    const query: string = await event.queryStringParameters.q || 'No query'
+    const originId: number = await Number(event.queryStringParameters.origin)
+    const destinationId = await Number(event.queryStringParameters.destination)
 
     try {
         const lineJsonPath_ = path.resolve(__dirname, lineJsonPath);
@@ -40,6 +41,10 @@ export const handler: Handler = async (event: any, _context: any) => {
             }
             line.type = line_.type
             lineList.addLine(line)
+        }
+
+        if (!lineList.getLineById(originId) || lineList.getLineById(destinationId)) {
+            throw new Error('Station Parameter(s) Invalid!')
         }
 
         const stationList = new StationList()
@@ -72,13 +77,14 @@ export const handler: Handler = async (event: any, _context: any) => {
         const originStation = stationList.getStationById(o), destinationStation = stationList.getStationById(d)
         console.log(`${originStation.name}→${destinationStation.name}`)
         const result = dijkstra.findRoute(originStation, destinationStation)
-        console.log(result)
+        if (!result) throw new Error('Error in route search!')
+        const responseJson = JSON.stringify(result)
+        console.log(responseJson)
 
         return {
             statusCode: 200,
             body: JSON.stringify({
-                // queryに書き換え
-                message: `Hello, ${query}!, ${stationList.getStationById(15).nameEn}`
+                message: responseJson
             })
         }
     } catch (error: any) {
