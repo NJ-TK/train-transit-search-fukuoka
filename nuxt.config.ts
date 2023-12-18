@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
+  runtimeConfig: {
+    STATION_LIST_API_ENDPOINT: 'http://localhost:8888/.netlify/functions/route-db'
+  },
   devtools: { enabled: true },
   app: {
     head: {

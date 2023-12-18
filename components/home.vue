@@ -1,11 +1,5 @@
 <script>
-export default {
-  methods: {
-    handleOriginStationClick() {
-      this.$emit('origin-station-clicked')
-    }
-  }
-}
+
 </script>
 
 
@@ -19,7 +13,7 @@ export default {
     </div>
 
     <div id="search_box_container">
-      <div class="station-search-box" @click="handleOriginStationClick">
+      <div class="station-search-box" @click="$emit('origin-station-clicked')">
         <div class="label start-station-label">出発駅</div>
         <div id="start_station_input" class="station-input">
           <span class="placeholder">駅を検索</span>

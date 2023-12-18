@@ -15,6 +15,10 @@ export const handler: Handler = async (event: any, _context: any) => {
     const originId: number = await Number(event.queryStringParameters.origin)
     const destinationId = await Number(event.queryStringParameters.destination)
 
+    const headers: { [key: string]: string } = {
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
+    }
+
     try {
         const lineJsonPath_ = path.resolve(__dirname, lineJsonPath);
         const lineJson = fs.readFileSync(lineJsonPath_, 'utf-8');
@@ -83,6 +87,7 @@ export const handler: Handler = async (event: any, _context: any) => {
 
         return {
             statusCode: 200,
+            headers,
             body: JSON.stringify({
                 message: responseJson
             })
@@ -90,7 +95,8 @@ export const handler: Handler = async (event: any, _context: any) => {
     } catch (error: any) {
         return {
             statusCode: 500,
+            headers,
             body: JSON.stringify({ error: error.message }),
-        };
+        }
     }
 }
