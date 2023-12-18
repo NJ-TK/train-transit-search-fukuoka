@@ -10,13 +10,27 @@ const props = defineProps({
 
 // router.addRoute({name: 'searchRoute', path: '/pages/select_station', component: home})
 let showInvaridMessage = ref(false)
+let useBulletTrain = ref(true), useJR = ref(true), usePrivateTrain = ref(true), useSubwayAndMonorail = ref(true)
+let transferTime = ref(5)
+let mode = ref(1)
 
 const routeSearch = () => {
+  const params = {
+    requestType: 'stationsAndLines',
+    useBulletTrain: useBulletTrain.value,
+    useJR: useJR.value,
+    usePrivateTrain: usePrivateTrain.value,
+    useSubwayAndMonorail: useSubwayAndMonorail.value,
+    transferTime: transferTime.value,
+    mode: mode.value
+  }
+  const query = new URLSearchParams(params)
   if (!props.originStationId || !props.destinationStationId) {
     showInvaridMessage.value = true
     return
   }
-  router.push({ path: `/route/${props.originStationId}/${props.destinationStationId}` })
+  console.log(query)
+  router.push({ path: `/route/${props.originStationId}/${props.destinationStationId}`, query: params })
 }
 </script>
 
@@ -63,7 +77,7 @@ const routeSearch = () => {
         <div id="search_settings">
           <div>使用する交通手段</div>
           <div>
-            <input
+            <input v-model="useBulletTrain"
               type="checkbox"
               id="check_bullet"
               name="check_bullet"
@@ -72,11 +86,11 @@ const routeSearch = () => {
             <label for="check_bullet">新幹線</label>
           </div>
           <div>
-            <input type="checkbox" id="check_JR" name="check_JR" checked />
+            <input v-model="useJR" type="checkbox" id="check_JR" name="check_JR" checked />
             <label for="check_JR">JR在来線</label>
           </div>
           <div>
-            <input
+            <input v-model="usePrivateTrain"
               type="checkbox"
               id="check_private_train"
               name="check_private_train"
@@ -85,7 +99,7 @@ const routeSearch = () => {
             <label for="check_private_train">私鉄</label>
           </div>
           <div>
-            <input
+            <input v-model="useSubwayAndMonorail"
               type="checkbox"
               id="check_subway_monorail"
               name="check_subway_monorail"
@@ -94,7 +108,7 @@ const routeSearch = () => {
             <label for="check_subway_monorail">地下鉄・モノレール</label>
           </div>
           <div>
-            乗り換え時間(分)<input
+            乗り換え時間(分)<input 
               type="number"
               id="transfer_time"
               value="5"

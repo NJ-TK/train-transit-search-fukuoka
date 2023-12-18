@@ -1,14 +1,14 @@
 <script setup>
 import { createApp, ref, onMounted } from "vue";
 import home from "../components/home.vue";
-import stationListComponent from "../components/station_list.vue";
+import stationListComponent from "../components/station_list.vue"
 
 const runtimeConfig = useRuntimeConfig();
 
 let isStationListVisible = ref(false)
 
-const params = {requestType: 'stationsAndLines'};
-const query = new URLSearchParams(params);
+const params = {requestType: 'stationsAndLines'}
+const query = new URLSearchParams(params)
 
 let originStationId = null
 let originStationName = ''
@@ -60,7 +60,7 @@ const closeStationSelect = (station = null) => {
     <section id="main_panel">
       <stationListComponent v-if="isStationListVisible" @close-station-select="closeStationSelect"
          :stationList="stationList" :lineList="lineList" />
-      <home v-else @origin-station-clicked="showStationList" 
+      <home v-show="!isStationListVisible" @origin-station-clicked="showStationList" 
         :originStationName="originStationName" :originStationId="originStationId"
         :destinationStationName="destinationStationName" :destinationStationId="destinationStationId" />
     </section>
