@@ -1,8 +1,23 @@
 <script setup>
+import {ref} from 'vue'
+const router = useRouter()
 const props = defineProps({
   originStationName: String,
+  originStationId: Number,
   destinationStationName: String,
+  destinationStationId: Number
 });
+
+// router.addRoute({name: 'searchRoute', path: '/pages/select_station', component: home})
+let showInvaridMessage = ref(false)
+
+const routeSearch = () => {
+  if (!props.originStationId || !props.destinationStationId) {
+    showInvaridMessage.value = true
+    return
+  }
+  router.push({ path: `/route/${props.originStationId}/${props.destinationStationId}` })
+}
 </script>
 
 
@@ -38,7 +53,8 @@ const props = defineProps({
           <span v-else class="placeholder">駅を検索</span>
         </div>
       </div>
-      <button id="station_search_button">
+      <p v-if="showInvaridMessage" class="invalid-message">駅を指定してください</p>
+      <button @click="routeSearch" id="station_search_button">
         <span class="material-icons" style="vertical-align: -3px">search</span
         >検索
       </button>

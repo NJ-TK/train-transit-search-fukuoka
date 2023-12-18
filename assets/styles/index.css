@@ -219,3 +219,6 @@ button:hover {
     color: #546e7a;
     filter: invert(100%) grayscale(100%) contrast(100);
 }
+.invalid-message {
+    color: #ff0000;
+}
