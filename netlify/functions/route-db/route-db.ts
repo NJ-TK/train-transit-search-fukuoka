@@ -14,13 +14,35 @@ export const handler: Handler = async (event: any, _context: any) => {
 
     try {
         if (requestType === 'stations') {
-            const stationJsonPath_ = path.resolve(__dirname, stationJsonPath);
-            const stationsJson = fs.readFileSync(stationJsonPath_, 'utf-8');
+            const stationJsonPath_ = path.resolve(__dirname, stationJsonPath)
+            const stationListJson = fs.readFileSync(stationJsonPath_, 'utf-8')
 
             return {
                 statusCode: 200,
                 headers,
-                body: stationsJson
+                body: stationListJson
+            }
+        } else if (requestType === 'lines') {
+            const lineJsonPath_ = path.resolve(__dirname, lineJsonPath)
+            const lineListJson = fs.readFileSync(lineJsonPath_, 'utf-8')
+
+            return {
+                statusCode: 200,
+                headers,
+                body: lineListJson
+            }
+        } else if (requestType === 'stationsAndLines') {
+            const stationJsonPath_ = path.resolve(__dirname, stationJsonPath)
+            const stationListJson = fs.readFileSync(stationJsonPath_, 'utf-8')
+            const lineJsonPath_ = path.resolve(__dirname, lineJsonPath)
+            const lineListJson = fs.readFileSync(lineJsonPath_, 'utf-8')
+            return {
+                statusCode: 200,
+                headers,
+                body: JSON.stringify({
+                    lines: JSON.parse(lineListJson),
+                    stations: JSON.parse(stationListJson)
+                })
             }
         } else {
             throw new Error('Invalid Parameter')
