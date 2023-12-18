@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       STATION_LIST_API_ENDPOINT: 'http://localhost:8888/.netlify/functions/route-db'
-    }    
+    },
+    ROUTE_API_ENDPOINT: 'http://localhost:8888/.netlify/functions/search_route'
   },
   devtools: { enabled: true },
   app: {

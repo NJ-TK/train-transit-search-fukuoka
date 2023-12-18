@@ -47,21 +47,21 @@ export const handler: Handler = async (event: any, _context: any) => {
             lineList.addLine(line)
         }
 
-        if (!lineList.getLineById(originId) || lineList.getLineById(destinationId)) {
-            throw new Error('Station Parameter(s) Invalid!')
-        }
-
         const stationList = new StationList()
         for (const station_ of rawStationList) {
             const station = new Station(station_.id, station_.name, station_.name_kana, station_.name_en)
             station_.lines.forEach((lineId: number, index: number) => {
                 const line = lineList.getLineById(lineId)
-                let ref
-                if (station_.refs) station_.refs[index]
-                station.addLine(line, ref)
+                station.addLine(line, station_.refs ? station_.refs[index]:undefined)
             });
 
             stationList.addStation(station)
+        }
+
+        const originStation = stationList.getStationById(originId)
+        const destinationStation = stationList.getStationById(destinationId)
+        if (!originStation || !destinationStation) {
+            throw new Error('Station Parameter(s) Invalid!')
         }
 
         console.log('計算開始')
@@ -77,20 +77,55 @@ export const handler: Handler = async (event: any, _context: any) => {
         }
 
         const dijkstra = new Dijkstra(graph)
-        const o = 3, d = 15
-        const originStation = stationList.getStationById(o), destinationStation = stationList.getStationById(d)
         console.log(`${originStation.name}→${destinationStation.name}`)
         const result = dijkstra.findRoute(originStation, destinationStation)
         if (!result) throw new Error('Error in route search!')
-        const responseJson = JSON.stringify(result)
-        console.log(responseJson)
+
+        const responseObject = {
+            stations: new Array(),
+            routes: new Array(),
+            times: result.times
+        }
+        let previousLine: Line | null = null
+        for (const [index, station] of result.stations.entries()) {
+            let refs: Array<string | undefined> = [] // 表示する路線記号(通常1つ、乗換駅なら2つ(出発・到着駅除く))
+            const nextLine = result.edges[index] ? result.edges[index].line : null
+            const isTransfer = (previousLine !== null && previousLine !== nextLine)
+            if (isTransfer && previousLine && nextLine) { // 乗換駅の場合
+                refs = [station.getRefsOfLine(previousLine), 
+                            station.getRefsOfLine(nextLine)]
+            } else if (nextLine === null) { // 最後の駅の場合
+                refs = [previousLine ? station.getRefsOfLine(previousLine) : undefined]
+            } else { // それ以外の途中駅の場合
+                const ref_ = station.getRefsOfLine(nextLine)
+                refs = [ref_ ? ref_ : undefined]
+            }
+            responseObject.stations.push({
+                id: station.id,
+                name: station.name,
+                name_kana: station.nameKana,
+                name_en: station.nameEn,
+                refs: refs,
+                isTransfer: isTransfer
+            })
+            previousLine = nextLine
+        }
+        for (const edge of result.edges) {
+            responseObject.routes.push({
+                time: edge.time,
+                name: edge.line.name,
+                name_kana: edge.line.nameKana,
+                name_en: edge.line.nameEn,
+                ref: (edge.line.refList ? edge.line.refList.join(',') : undefined),
+                type: edge.line.type
+            })
+        }
+        const responseJson = JSON.stringify(responseObject)
 
         return {
             statusCode: 200,
             headers,
-            body: JSON.stringify({
-                message: responseJson
-            })
+            body: responseJson
         }
     } catch (error: any) {
         return {

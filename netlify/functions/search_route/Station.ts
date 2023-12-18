@@ -21,10 +21,10 @@ export class Station {
 
     get id() { return this._id }
     get lines() {
-        return this.linesAndRefs.keys
+        return Array.from(this.linesAndRefs)
     }
 
-    public getRefsOfLine(line: Line) {
+    public getRefsOfLine(line: Line): Array<string> | undefined {
         return this.linesAndRefs.get(line)
     }
 }

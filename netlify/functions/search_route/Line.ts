@@ -3,7 +3,7 @@ export class Line {
     public name: string
     public nameKana: string | undefined
     public nameEn: string | undefined
-    private _refList: Set<string> | undefined
+    private _refList: Array<string> | undefined
     public color: string | undefined
     public owner: string | undefined
     private _type: string | undefined
@@ -27,7 +27,7 @@ export class Line {
     get type() { return this._type }
 
     addRefStr(ref: string) {
-        this.refList?.add(ref)
+        this.refList?.push(ref)
     }
     get refList() { return this._refList }
 }
