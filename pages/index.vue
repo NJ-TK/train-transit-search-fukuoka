@@ -34,7 +34,7 @@ console.log(stationList[0]);
 <template>
   <div id="app">
     <section id="main_panel">
-      <stationListComponent v-if="isStationListVisible" @back-button-clicked="hideStationList" />
+      <stationListComponent v-if="isStationListVisible" @back-button-clicked="hideStationList" :station-list="stationList" />
       <home @origin-station-clicked="showStationList" v-else />
     </section>
     <section id="map_panel">
