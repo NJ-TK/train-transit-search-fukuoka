@@ -7,45 +7,64 @@ const runtimeConfig = useRuntimeConfig();
 
 let isStationListVisible = ref(false)
 
-const showStationList = () => isStationListVisible.value = true
-const hideStationList = () => isStationListVisible.value = false
-
-const params = {requestType: 'stations'};
+const params = {requestType: 'stationsAndLines'};
 const query = new URLSearchParams(params);
 
 let stationList = new Array()
+let lineList = new Array()
 
-const fetchMessage = async () => {
+let originStationId = null
+let originStationName = ''
+let destinationStationId = null
+let destinationStationName = ''
+
+let stationSelectTarget = ''
+
+const showStationList = (target) => {
+  if (target == 'origin') stationSelectTarget = 'origin'
+  else if (target == 'destination') stationSelectTarget = 'destination'
+  else stationSelectTarget = ''
+  isStationListVisible.value = true
+}
+const hideStationList = () => isStationListVisible.value = false
+
+const fetchStationList = async () => {
   const { data } = await useAsyncData(
     'fetchMessage',
     () => {
-      return $fetch(runtimeConfig.STATION_LIST_API_ENDPOINT + '?' + query);
+      return $fetch(runtimeConfig.STATION_LIST_API_ENDPOINT + '?' + query)
     }
-  );
-  stationList = data.value;
-};
+  )
+  stationList = data.value.stations
+  lineList = data.value.lines
+}
 
-await fetchMessage();
+await fetchStationList();
 
-console.log(stationList[0]);
-
+const closeStationSelect = (station = null) => {
+  if (station) {
+    if (stationSelectTarget === 'origin') {
+      originStationId = station.id
+      originStationName = station.name
+    } else if (stationSelectTarget === 'destination') {
+      destinationStationId = station.id
+      destinationStationName = station.name
+    }
+  }
+  hideStationList()
+}
 
 </script>
 <template>
   <div id="app">
     <section id="main_panel">
-      <stationListComponent v-if="isStationListVisible" @back-button-clicked="hideStationList" :station-list="stationList" />
-      <home @origin-station-clicked="showStationList" v-else />
+      <stationListComponent v-if="isStationListVisible" @close-station-select="closeStationSelect"
+         :stationList="stationList" :lineList="lineList" />
+      <home v-else @origin-station-clicked="showStationList" 
+        :originStationName="originStationName" :destinationStationName="destinationStationName" />
     </section>
     <section id="map_panel">
-      a
       
-      <!-- {{stationList}} -->
-      <div>
-          <ul>
-            <li v-for="station in stationList" :key="station.id">{{ station.name }}</li>
-          </ul>
-      </div>
       <!-- <div id="train_map_container">
                 <object id="train_map" data="train_map/train_map.svg" type="image/svg+xml"></object>
             </div> -->

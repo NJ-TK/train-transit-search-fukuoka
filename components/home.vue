@@ -1,5 +1,8 @@
-<script>
-
+<script setup>
+const props = defineProps({
+  originStationName: String,
+  destinationStationName: String,
+});
 </script>
 
 
@@ -8,28 +11,38 @@
     <div class="title-bar">
       <div class="title">
         <span class="material-icons" style="vertical-align: -5px">train</span
-        >乗り換え検索
+        >乗り換え検索 {{des}}
       </div>
     </div>
 
     <div id="search_box_container">
-      <div class="station-search-box" @click="$emit('origin-station-clicked')">
+      <div
+        class="station-search-box"
+        @click="$emit('origin-station-clicked', 'origin')"
+      >
         <div class="label start-station-label">出発駅</div>
         <div id="start_station_input" class="station-input">
-          <span class="placeholder">駅を検索</span>
+          <span v-if="originStationName">{{ originStationName }}</span>
+          <span v-else class="placeholder">駅を検索</span>
         </div>
       </div>
-      <div class="station-search-box">
+      <div
+        class="station-search-box"
+        @click="$emit('origin-station-clicked', 'destination')"
+      >
         <div class="label goal-station-label">到着駅</div>
         <div id="goal_station_input" class="station-input">
-          <span class="placeholder">駅を検索</span>
+          <span v-if="destinationStationName">{{
+            destinationStationName
+          }}</span>
+          <span v-else class="placeholder">駅を検索</span>
         </div>
       </div>
       <button id="station_search_button">
         <span class="material-icons" style="vertical-align: -3px">search</span
         >検索
       </button>
-      <details>
+      <details open>
         <summary>詳細設定</summary>
         <div id="search_settings">
           <div>使用する交通手段</div>
@@ -105,5 +118,4 @@
 </template>
 
 <style scoped>
-
 </style>

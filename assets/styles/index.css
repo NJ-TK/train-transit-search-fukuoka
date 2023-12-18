@@ -183,6 +183,8 @@ button:hover {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+    overflow-y: auto;
+    height: calc(100vh - 56px);
 }
 .station-search-list-content {
     border-bottom: solid 1px #aaa;

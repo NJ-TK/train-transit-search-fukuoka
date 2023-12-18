@@ -5,7 +5,9 @@ console.log(runtimeConfig.public.STATION_LIST_API_ENDPOINT);
 
 const props = defineProps({
   stationList: Array,
+  lineList: Array
 });
+const emit = defineEmits()
 
 const searchWord = ref("");
 
@@ -38,6 +40,10 @@ const searchStation = () => {
         searchResults.value = []
     }
 };
+
+const selectStation = (station) => {
+  emit('close-station-select', station)
+}
 </script>
 
 <template>
@@ -46,7 +52,7 @@ const searchStation = () => {
       <div
         id="station_search_back_button"
         class="material-icons"
-        @click="$emit('back-button-clicked')"
+        @click="$emit('close-station-select')"
       >
         arrow_back
       </div>
@@ -59,17 +65,20 @@ const searchStation = () => {
         @input="searchStation"
       />
     </div>
-    <div v-for="station in searchResults" :key="station.id" id="station_search_result">
-      <div class="station-search-list-content" stationid="{{result.id}}">
+    <div id="station_search_result">
+      <div v-for="station in searchResults" :key="station.id"  class="station-search-list-content" stationid="{{result.id}}"
+        @click="selectStation(station)">
         <div class="name">{{station.name}}</div>
         <div class="name-kana">{{station.name_kana}}</div>
-        <div class="detail">detailHtml</div>
+        <div class="detail">
+          <span v-for="lineId in station.lines" :key="lineList[lineId].id" class="line" 
+            :style="{backgroundColor: lineList[lineId].color || '#546e7a'}">
+            <span :style="{color: lineList[lineId].color}">
+              {{lineList[lineId].name}}
+            </span>
+          </span>
+        </div>
       </div>
     </div>
-    <ul>
-      <li v-for="station in stationList" :key="station.id">
-        {{ station.name }}
-      </li>
-    </ul>
   </div>
 </template>
