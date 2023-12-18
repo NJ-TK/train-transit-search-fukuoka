@@ -2,7 +2,9 @@
 export default defineNuxtConfig({
   ssr: true,
   runtimeConfig: {
-    STATION_LIST_API_ENDPOINT: 'http://localhost:8888/.netlify/functions/route-db'
+    public: {
+      STATION_LIST_API_ENDPOINT: 'http://localhost:8888/.netlify/functions/route-db'
+    }    
   },
   devtools: { enabled: true },
   app: {
@@ -20,8 +22,8 @@ export default defineNuxtConfig({
   ],
   components: [
     {
-      path: '~/components',
-      extensions: ['.vue']
+      path: "@/components",
+      pathPrefix: false,
     }
   ]
 })

@@ -2,7 +2,7 @@
 import { createApp, ref, onMounted } from "vue";
 import home from "../components/home.vue";
 import stationListComponent from "../components/station_list.vue";
-// import {useAsyncData} from 'nuxt'
+
 const runtimeConfig = useRuntimeConfig();
 
 let isStationListVisible = ref(false)
@@ -10,15 +10,15 @@ let isStationListVisible = ref(false)
 const params = {requestType: 'stationsAndLines'};
 const query = new URLSearchParams(params);
 
-let stationList = new Array()
-let lineList = new Array()
-
 let originStationId = null
 let originStationName = ''
 let destinationStationId = null
 let destinationStationName = ''
 
 let stationSelectTarget = ''
+
+let stationList = new Array()
+let lineList = new Array()
 
 const showStationList = (target) => {
   if (target == 'origin') stationSelectTarget = 'origin'
@@ -32,14 +32,14 @@ const fetchStationList = async () => {
   const { data } = await useAsyncData(
     'fetchMessage',
     () => {
-      return $fetch(runtimeConfig.STATION_LIST_API_ENDPOINT + '?' + query)
+      return $fetch(runtimeConfig.public.STATION_LIST_API_ENDPOINT + '?' + query)
     }
   )
   stationList = data.value.stations
   lineList = data.value.lines
 }
 
-await fetchStationList();
+fetchStationList()
 
 const closeStationSelect = (station = null) => {
   if (station) {
@@ -61,7 +61,8 @@ const closeStationSelect = (station = null) => {
       <stationListComponent v-if="isStationListVisible" @close-station-select="closeStationSelect"
          :stationList="stationList" :lineList="lineList" />
       <home v-else @origin-station-clicked="showStationList" 
-        :originStationName="originStationName" :destinationStationName="destinationStationName" />
+        :originStationName="originStationName" :originStationId="originStationId"
+        :destinationStationName="destinationStationName" :destinationStationId="destinationStationId" />
     </section>
     <section id="map_panel">
       
