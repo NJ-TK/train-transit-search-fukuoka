@@ -26,5 +26,10 @@ export default defineNuxtConfig({
       path: "@/components",
       pathPrefix: false,
     }
-  ]
+  ],
+  $production: {
+    routeRules: {
+      '/**': { isr: true }
+    }
+  }
 })

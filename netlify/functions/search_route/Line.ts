@@ -13,6 +13,7 @@ export class Line {
         this.name = name
         this.nameKana = nameKana
         this.nameEn = nameEn
+        this._refList = new Array()
     }
 
     get id() { return this._id }
