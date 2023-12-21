@@ -85,12 +85,15 @@ export const handler: Handler = async (event: any, _context: any) => {
         interface ResponseStation {
             type: string,
             id: number, name: string, name_kana: string | undefined, name_en: string | undefined,
-            refs: (string | null | undefined)[], time: number
+            refs: (string | null | undefined)[], time: number,
+            colors: (string | undefined)[], is_connected_line_bullet: (boolean | undefined)[],
+            hasPreviousLine: boolean, hasNextLine: boolean
         }
         interface ResponseLine {
             type: string,
             lineId: number, line_name: string, line_name_en: string | undefined, line_name_kana: string | undefined,
-            ref: string, owner: string | undefined, pass_stations: ResponseStation[]
+            ref: string, owner: string | undefined, pass_stations: ResponseStation[], line_color: string | undefined,
+            line_type: string | undefined
         }
 
         // 最終出力用の配列を定義
@@ -98,22 +101,38 @@ export const handler: Handler = async (event: any, _context: any) => {
 
         let responseLine: ResponseLine | null = null
         for (const [index, station] of result.stations.entries()) {
-            let refs: Array<string | null | undefined> = [] // 表示する路線記号(通常1つ、乗換駅なら2つ(出発・到着駅除く))
+            let refs: (string | null | undefined)[] = new Array() // 表示する路線記号(通常1つ、乗換駅なら2つ(出発・到着駅除く))
+            let colors: (string | undefined)[] = new Array()
+            let isConnectedLineBullet: (boolean | undefined)[] = new Array()
             const nextLine = result.edges[index] ? result.edges[index].line : null
-            const isTransferStation = (previousLine !== null && previousLine !== nextLine)
+            let hasPreviousLine = false, hasNextLine = false
             
             if (previousLine !== nextLine) { // 乗換駅or最初の駅or最後の駅の場合
                 // 現在の駅をresponseRouteに追加する
                 if (previousLine && nextLine) { // 乗換駅の場合
                     refs = [station.getRefOfLine(previousLine), 
                                 station.getRefOfLine(nextLine)]
-                } else if (nextLine === null) { // 最後の駅の場合
-                    refs = [previousLine ? station.getRefOfLine(previousLine) : undefined]
+                    colors = [previousLine.color, nextLine.color]
+                    isConnectedLineBullet = [previousLine.type === 'bullet', nextLine.type === 'bullet']
+                    hasPreviousLine = true, hasNextLine = true
+                } else if (previousLine === null && nextLine) { // 最初の駅の場合
+                    refs = [undefined, station.getRefOfLine(nextLine)]
+                    colors = [undefined, nextLine?.color]
+                    isConnectedLineBullet = [undefined, nextLine?.type === 'bullet']
+                    hasPreviousLine = false, hasNextLine = true
+                } else if (previousLine) { // 最後の駅の場合
+                    refs = [station.getRefOfLine(previousLine), undefined]
+                    colors = [previousLine.color, undefined]
+                    isConnectedLineBullet = [previousLine.type === 'bullet', undefined]
+                    hasPreviousLine = true, hasNextLine = false
                 }
                 const responseStation: ResponseStation = {
                     type: 'station', id: station.id,
                     name: station.name, name_kana: station.nameKana, name_en: station.nameEn,
-                    refs: refs, time: result.times[index]
+                    refs: refs, time: result.times[index],
+                    colors: colors,
+                    is_connected_line_bullet: isConnectedLineBullet,
+                    hasPreviousLine: hasPreviousLine, hasNextLine: hasNextLine
                 }
                 responseRoute.push(responseStation)
 
@@ -122,7 +141,8 @@ export const handler: Handler = async (event: any, _context: any) => {
                     responseLine = {
                         type: 'line', lineId: nextLine.id,
                         line_name: nextLine.name, line_name_kana: nextLine.nameKana, line_name_en: nextLine.nameEn,
-                        ref: nextLine.refList?.join(',') || '', owner: nextLine.owner, pass_stations: new Array()
+                        ref: nextLine.refList?.join(',') || '', owner: nextLine.owner, pass_stations: new Array(),
+                        line_color: nextLine.color, line_type: nextLine.type
                     }
                     if (responseLine) responseRoute.push(responseLine)
                 }
@@ -131,7 +151,10 @@ export const handler: Handler = async (event: any, _context: any) => {
                 const responseStation: ResponseStation = {
                     type: 'station', id: station.id,
                     name: station.name, name_kana: station.nameKana, name_en: station.nameEn,
-                    refs: refs, time: result.times[index]
+                    refs: refs, time: result.times[index],
+                    colors: [nextLine?.color],
+                    is_connected_line_bullet: [nextLine?.type === 'bullet'],
+                    hasPreviousLine: true, hasNextLine: true                    
                 }
                 // 直前でresponseRouteにpushされたresponseLineのpass_stationsに追加
                 responseLine?.pass_stations.push(responseStation)
@@ -140,8 +163,13 @@ export const handler: Handler = async (event: any, _context: any) => {
             previousLine = nextLine
         }
 
-
-        const responseJson = JSON.stringify(responseRoute)
+        const responseObject = {
+            originStationId: originStation.id, originStationName: originStation.name,
+            destinationStationId: destinationStation.id, destinationStationName: destinationStation.name,
+            requiredTime: result.times[result.times.length - 1],
+            route: responseRoute
+        }
+        const responseJson = JSON.stringify(responseObject)
 
         return {
             statusCode: 200,
