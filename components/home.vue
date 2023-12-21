@@ -1,5 +1,7 @@
 <script setup>
 import {ref} from 'vue'
+import headerComponent from './header.vue'
+
 const router = useRouter()
 const props = defineProps({
   originStationName: String,
@@ -37,12 +39,8 @@ const routeSearch = () => {
 
 <template>
   <div id="search_page" class="main-panel-page">
-    <div class="title-bar">
-      <div class="title">
-        <span class="material-icons" style="vertical-align: -5px">train</span
-        >乗り換え検索 {{des}}
-      </div>
-    </div>
+
+    <headerComponent :headerIcon="'train'" :headerTitle="'乗り換え検索'" />
 
     <div id="search_box_container">
       <div
