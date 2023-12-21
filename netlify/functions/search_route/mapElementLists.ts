@@ -12,6 +12,7 @@ export class LineList {
         this.lineList[line.id] = line
     }
     public getLineById(id: number) {
+        if (id === -1) return new Line(-1, '徒歩', 'とほ', 'Walk')
         return this.lineList[id]
     }
 }
