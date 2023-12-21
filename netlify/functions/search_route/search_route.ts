@@ -78,7 +78,22 @@ export const handler: Handler = async (event: any, _context: any) => {
 
         const dijkstra = new Dijkstra(graph)
         console.log(`${originStation.name}→${destinationStation.name}`)
-        const result = dijkstra.findRoute(originStation, destinationStation)
+
+        let transferTime = 5
+        if (!isNaN(event.queryStringParameters.transferTime)) transferTime = Number(event.queryStringParameters.transferTime)
+        let mode = 1
+        const queryParamMode = event.queryStringParameters.mode
+        if (queryParamMode === '0' || queryParamMode === '1' || queryParamMode === '2') mode = Number(event.queryStringParameters.queryParamMode)
+        const useBulletTrain = !(event.queryStringParameters.useBulletTrain === 'false')
+        const useJR = !(event.queryStringParameters.useJR === 'false')
+        const usePrivateTrain = !(event.queryStringParameters.usePrivateTrain === 'false')
+        const useSubwayAndMonorail = !(event.queryStringParameters.useSubwayAndMonorail === 'false')
+        let transferCost = 5
+        if (mode === 0) transferCost = 3
+        else if (mode === 2) transferCost = 10000
+        
+        const result = dijkstra.findRoute(originStation, destinationStation, useBulletTrain, useJR, usePrivateTrain,useSubwayAndMonorail,
+            transferTime, )
         if (!result) throw new Error('Error in route search!')
 
         let previousLine: Line | null = null

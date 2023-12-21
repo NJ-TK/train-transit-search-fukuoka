@@ -10,7 +10,6 @@ const props = defineProps({
   destinationStationId: Number
 });
 
-// router.addRoute({name: 'searchRoute', path: '/pages/select_station', component: home})
 let showInvaridMessage = ref(false)
 let useBulletTrain = ref(true), useJR = ref(true), usePrivateTrain = ref(true), useSubwayAndMonorail = ref(true)
 let transferTime = ref(5)

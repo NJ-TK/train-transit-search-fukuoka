@@ -30,11 +30,21 @@ const getTimeStr = (t, format) => {
 }
 
 const fetchRoute = async () => {
-  // if (!runtimeConfig.ROUTE_API_ENDPOINT) return;
+  let transferTime = 5
+  if (!isNaN(route.query.transferTime)) transferTime = Number(route.query.transferTime)
+  let mode = 1
+  const queryParamMode = route.query.mode
+  if (queryParamMode === '0' || queryParamMode === '1' || queryParamMode === '2') mode = Number(queryParamMode)
   const params = {
     origin: originStationId,
     destination: destinationStationId,
-  };
+    useBulletTrain: !(route.query.useBulletTrain === 'false'),
+    useJR: !(route.query.useJR === 'false'),
+    usePrivateTrain: !(route.query.usePrivateTrain === 'false'),
+    useSubwayAndMonorail: !(route.query.useSubwayAndMonorail === 'false'),
+    transferTime: route.query.transferTime,
+    mode: mode
+  }
   const query = new URLSearchParams(params);
   const { data } = await useAsyncData(
     'fetchMessage',
@@ -43,7 +53,7 @@ const fetchRoute = async () => {
   resultRoute = data.value;
   originStationName = resultRoute.originStationName
   destinationStationName = resultRoute.destinationStationName
-  requiredTime = resultRoute.requiredTime
+  requiredTime = transferTime
   timeRequiredHourMin = secToMin(requiredTime)
   
 };
