@@ -18,7 +18,6 @@ let mode = ref(1)
 
 const routeSearch = () => {
   const params = {
-    requestType: 'stationsAndLines',
     useBulletTrain: useBulletTrain.value,
     useJR: useJR.value,
     usePrivateTrain: usePrivateTrain.value,
@@ -31,8 +30,7 @@ const routeSearch = () => {
     showInvaridMessage.value = true
     return
   }
-  console.log(query)
-  router.push({ path: `/route/${props.originStationId}/${props.destinationStationId}`, query: params })
+  window.location.href = `/route/${props.originStationId}/${props.destinationStationId}?${query}`
 }
 </script>
 
