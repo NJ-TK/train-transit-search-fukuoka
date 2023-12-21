@@ -81,45 +81,67 @@ export const handler: Handler = async (event: any, _context: any) => {
         const result = dijkstra.findRoute(originStation, destinationStation)
         if (!result) throw new Error('Error in route search!')
 
-        const responseObject = {
-            stations: new Array(),
-            routes: new Array(),
-            times: result.times
-        }
         let previousLine: Line | null = null
+        interface ResponseStation {
+            type: string,
+            id: number, name: string, name_kana: string | undefined, name_en: string | undefined,
+            refs: (string | null | undefined)[], time: number
+        }
+        interface ResponseLine {
+            type: string,
+            lineId: number, line_name: string, line_name_en: string | undefined, line_name_kana: string | undefined,
+            ref: string, owner: string | undefined, pass_stations: ResponseStation[]
+        }
+
+        // 最終出力用の配列を定義
+        const responseRoute: (ResponseStation | ResponseLine)[] = new Array()
+
+        let responseLine: ResponseLine | null = null
         for (const [index, station] of result.stations.entries()) {
             let refs: Array<string | null | undefined> = [] // 表示する路線記号(通常1つ、乗換駅なら2つ(出発・到着駅除く))
             const nextLine = result.edges[index] ? result.edges[index].line : null
-            const isTransfer = (previousLine !== null && previousLine !== nextLine)
-            if (isTransfer && previousLine && nextLine) { // 乗換駅の場合
-                refs = [station.getRefOfLine(previousLine), 
-                            station.getRefOfLine(nextLine)]
-            } else if (nextLine === null) { // 最後の駅の場合
-                refs = [previousLine ? station.getRefOfLine(previousLine) : undefined]
-            } else { // それ以外の途中駅の場合
-                refs = [station.getRefOfLine(nextLine)]
+            const isTransferStation = (previousLine !== null && previousLine !== nextLine)
+            
+            if (previousLine !== nextLine) { // 乗換駅or最初の駅or最後の駅の場合
+                // 現在の駅をresponseRouteに追加する
+                if (previousLine && nextLine) { // 乗換駅の場合
+                    refs = [station.getRefOfLine(previousLine), 
+                                station.getRefOfLine(nextLine)]
+                } else if (nextLine === null) { // 最後の駅の場合
+                    refs = [previousLine ? station.getRefOfLine(previousLine) : undefined]
+                }
+                const responseStation: ResponseStation = {
+                    type: 'station', id: station.id,
+                    name: station.name, name_kana: station.nameKana, name_en: station.nameEn,
+                    refs: refs, time: result.times[index]
+                }
+                responseRoute.push(responseStation)
+
+                // 最後の駅でなければ、次の路線情報をresponseRouteに入れる
+                if (nextLine) {
+                    responseLine = {
+                        type: 'line', lineId: nextLine.id,
+                        line_name: nextLine.name, line_name_kana: nextLine.nameKana, line_name_en: nextLine.nameEn,
+                        ref: nextLine.refList?.join(',') || '', owner: nextLine.owner, pass_stations: new Array()
+                    }
+                    if (responseLine) responseRoute.push(responseLine)
+                }
+            } else { // 途中駅の場合
+                const refs: string[] = nextLine ? [station.getRefOfLine(nextLine)] : new Array()
+                const responseStation: ResponseStation = {
+                    type: 'station', id: station.id,
+                    name: station.name, name_kana: station.nameKana, name_en: station.nameEn,
+                    refs: refs, time: result.times[index]
+                }
+                // 直前でresponseRouteにpushされたresponseLineのpass_stationsに追加
+                responseLine?.pass_stations.push(responseStation)
             }
-            responseObject.stations.push({
-                id: station.id,
-                name: station.name,
-                name_kana: station.nameKana,
-                name_en: station.nameEn,
-                refs: refs,
-                isTransfer: isTransfer
-            })
+
             previousLine = nextLine
         }
-        for (const edge of result.edges) {
-            responseObject.routes.push({
-                time: edge.time,
-                name: edge.line.name,
-                name_kana: edge.line.nameKana,
-                name_en: edge.line.nameEn,
-                ref: (edge.line.refList ? edge.line.refList.join(',') : undefined),
-                type: edge.line.type
-            })
-        }
-        const responseJson = JSON.stringify(responseObject)
+
+
+        const responseJson = JSON.stringify(responseRoute)
 
         return {
             statusCode: 200,
