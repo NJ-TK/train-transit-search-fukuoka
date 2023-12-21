@@ -5,7 +5,7 @@ export class Station {
     public name: string
     public nameKana: string | undefined
     public nameEn: string | undefined
-    private linesAndRefs: Map<Line, Array<string>>
+    private linesAndRefs: Map<Line, string | null>
 
     constructor(id: number, name: string, nameKana: string | undefined, nameEn: string | undefined) {
         this._id = id
@@ -15,8 +15,8 @@ export class Station {
         this.linesAndRefs = new Map()
     }
 
-    public addLine(line: Line, ref: Array<string> | undefined) {
-        this.linesAndRefs.set(line, (ref || new Array()))
+    public addLine(line: Line, ref: string | null) {
+        this.linesAndRefs.set(line, ref)
     }
 
     get id() { return this._id }
@@ -24,7 +24,7 @@ export class Station {
         return Array.from(this.linesAndRefs)
     }
 
-    public getRefsOfLine(line: Line): Array<string> | undefined {
+    public getRefOfLine(line: Line): string | null | undefined {
         return this.linesAndRefs.get(line)
     }
 }

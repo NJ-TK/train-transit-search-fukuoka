@@ -52,7 +52,7 @@ export const handler: Handler = async (event: any, _context: any) => {
             const station = new Station(station_.id, station_.name, station_.name_kana, station_.name_en)
             station_.lines.forEach((lineId: number, index: number) => {
                 const line = lineList.getLineById(lineId)
-                station.addLine(line, station_.refs ? station_.refs[index]:undefined)
+                station.addLine(line, station_.refs ? station_.refs[index]:null)
             });
 
             stationList.addStation(station)
@@ -88,17 +88,16 @@ export const handler: Handler = async (event: any, _context: any) => {
         }
         let previousLine: Line | null = null
         for (const [index, station] of result.stations.entries()) {
-            let refs: Array<string | undefined> = [] // 表示する路線記号(通常1つ、乗換駅なら2つ(出発・到着駅除く))
+            let refs: Array<string | null | undefined> = [] // 表示する路線記号(通常1つ、乗換駅なら2つ(出発・到着駅除く))
             const nextLine = result.edges[index] ? result.edges[index].line : null
             const isTransfer = (previousLine !== null && previousLine !== nextLine)
             if (isTransfer && previousLine && nextLine) { // 乗換駅の場合
-                refs = [station.getRefsOfLine(previousLine), 
-                            station.getRefsOfLine(nextLine)]
+                refs = [station.getRefOfLine(previousLine), 
+                            station.getRefOfLine(nextLine)]
             } else if (nextLine === null) { // 最後の駅の場合
-                refs = [previousLine ? station.getRefsOfLine(previousLine) : undefined]
+                refs = [previousLine ? station.getRefOfLine(previousLine) : undefined]
             } else { // それ以外の途中駅の場合
-                const ref_ = station.getRefsOfLine(nextLine)
-                refs = [ref_ ? ref_ : undefined]
+                refs = [station.getRefOfLine(nextLine)]
             }
             responseObject.stations.push({
                 id: station.id,
