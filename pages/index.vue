@@ -29,14 +29,19 @@ const showStationList = (target) => {
 const hideStationList = () => isStationListVisible.value = false
 
 const fetchStationList = async () => {
-  const { data } = await useAsyncData(
-    'fetchMessage',
-    () => {
-      return $fetch(runtimeConfig.public.STATION_LIST_API_ENDPOINT + '?' + query)
-    }
-  )
-  stationList = data.value.stations
-  lineList = data.value.lines
+  try {
+    const { data } = await useAsyncData(
+      'stationDb',
+      () => {
+        return $fetch(runtimeConfig.public.stationListApiEndpoint + '?' + query)
+      }
+    )
+    const data_ = JSON.parse(data.value)
+    stationList = data_.stations
+    lineList = data_.lines
+  } catch (error) {
+    console.log(error)
+  }  
 }
 
 fetchStationList()

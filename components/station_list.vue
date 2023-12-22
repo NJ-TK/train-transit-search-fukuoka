@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 const runtimeConfig = useRuntimeConfig();
-console.log(runtimeConfig.public.STATION_LIST_API_ENDPOINT);
+console.log(runtimeConfig.public.stationListApiEndpoint);
 
 const props = defineProps({
   stationList: Array,

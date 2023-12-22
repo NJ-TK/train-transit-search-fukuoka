@@ -8,8 +8,34 @@ export const handler: Handler = async (event: any, _context: any) => {
 
     const requestType = await event.queryStringParameters.requestType
 
-    const headers: { [key: string]: string } = {
-        'Access-Control-Allow-Origin': 'http://localhost:3000'
+    const allowedOrigins: string[] = [
+        'http://localhost:3000',
+        'https://trs-portfolio.netlify.app'
+    ]
+    const requestOrigin: string | undefined = event.headers.origin
+    let headers: { [key: string]: string } | undefined
+    if (requestOrigin && allowedOrigins.includes(requestOrigin)) {
+        headers = {
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Origin': requestOrigin
+        }
+    }
+
+    if (event.httpMethod === 'OPTIONS') {
+        if (headers) {
+            return {
+                statusCode: 200,
+                headers
+            }
+        }
+        return {
+            statusCode: 500
+        }
+    } else if (event.httpMethod !== 'GET') {
+        return {
+            statusCode: 405,
+            body: 'Method Not Allowed'
+        }
     }
 
     try {

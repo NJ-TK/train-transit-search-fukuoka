@@ -3,9 +3,9 @@ export default defineNuxtConfig({
   ssr: true,
   runtimeConfig: {
     public: {
-      STATION_LIST_API_ENDPOINT: 'http://localhost:8888/.netlify/functions/route-db'
+      stationListApiEndpoint: process.env.STATION_LIST_API_ENDPOINT,
+      routeApiEndpoint: process.env.ROUTE_API_ENDPOINT
     },
-    ROUTE_API_ENDPOINT: 'http://localhost:8888/.netlify/functions/search_route'
   },
   devtools: { enabled: true },
   app: {
@@ -26,10 +26,5 @@ export default defineNuxtConfig({
       path: "@/components",
       pathPrefix: false,
     }
-  ],
-  $production: {
-    routeRules: {
-      '/**': { isr: true }
-    }
-  }
+  ]
 })

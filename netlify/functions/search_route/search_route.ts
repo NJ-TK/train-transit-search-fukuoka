@@ -15,8 +15,34 @@ export const handler: Handler = async (event: any, _context: any) => {
     const originId: number = await Number(event.queryStringParameters.origin)
     const destinationId = await Number(event.queryStringParameters.destination)
 
-    const headers: { [key: string]: string } = {
-        'Access-Control-Allow-Origin': 'http://localhost:3000'
+    const allowedOrigins: string[] = [
+        'http://localhost:3000',
+        'https://trs-portfolio.netlify.app'
+    ]
+    const requestOrigin: string | undefined = event.headers.origin
+    let headers: { [key: string]: string } | undefined
+    if (requestOrigin && allowedOrigins.includes(requestOrigin)) {
+        headers = {
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Origin': requestOrigin
+        }
+    }
+
+    if (event.httpMethod === 'OPTIONS') {
+        if (headers) {
+            return {
+                statusCode: 200,
+                headers
+            }
+        }
+        return {
+            statusCode: 500
+        }
+    } else if (event.httpMethod !== 'GET') {
+        return {
+            statusCode: 405,
+            body: 'Method Not Allowed'
+        }
     }
 
     try {
@@ -52,7 +78,7 @@ export const handler: Handler = async (event: any, _context: any) => {
             const station = new Station(station_.id, station_.name, station_.name_kana, station_.name_en)
             station_.lines.forEach((lineId: number, index: number) => {
                 const line = lineList.getLineById(lineId)
-                station.addLine(line, station_.refs ? station_.refs[index]:null)
+                station.addLine(line, station_.refs ? station_.refs[index] : null)
             });
 
             stationList.addStation(station)
@@ -66,7 +92,7 @@ export const handler: Handler = async (event: any, _context: any) => {
 
         console.log('計算開始')
         const graph = new Graph()
-        
+
         for (const route_ of rawRouteList) {
             graph.addEdge(stationList.getStationById(route_.start), stationList.getStationById(route_.end),
                 route_.time, lineList.getLineById(route_.line))
@@ -91,9 +117,9 @@ export const handler: Handler = async (event: any, _context: any) => {
         let transferCost = 5
         if (mode === 0) transferCost = 3
         else if (mode === 2) transferCost = 10000
-        
-        const result = dijkstra.findRoute(originStation, destinationStation, useBulletTrain, useJR, usePrivateTrain,useSubwayAndMonorail,
-            transferTime, )
+
+        const result = dijkstra.findRoute(originStation, destinationStation, useBulletTrain, useJR, usePrivateTrain, useSubwayAndMonorail,
+            transferTime,)
         if (!result) throw new Error('Error in route search!')
 
         let previousLine: Line | null = null
@@ -121,12 +147,12 @@ export const handler: Handler = async (event: any, _context: any) => {
             let isConnectedLineBullet: (boolean | undefined)[] = new Array()
             const nextLine = result.edges[index] ? result.edges[index].line : null
             let hasPreviousLine = false, hasNextLine = false
-            
+
             if (previousLine !== nextLine) { // 乗換駅or最初の駅or最後の駅の場合
                 // 現在の駅をresponseRouteに追加する
                 if (previousLine && nextLine) { // 乗換駅の場合
-                    refs = [station.getRefOfLine(previousLine), 
-                                station.getRefOfLine(nextLine)]
+                    refs = [station.getRefOfLine(previousLine),
+                    station.getRefOfLine(nextLine)]
                     colors = [previousLine.color, nextLine.color]
                     isConnectedLineBullet = [previousLine.type === 'bullet', nextLine.type === 'bullet']
                     hasPreviousLine = true, hasNextLine = true
@@ -169,7 +195,7 @@ export const handler: Handler = async (event: any, _context: any) => {
                     refs: refs, time: result.times[index],
                     colors: [nextLine?.color],
                     is_connected_line_bullet: [nextLine?.type === 'bullet'],
-                    hasPreviousLine: true, hasNextLine: true                    
+                    hasPreviousLine: true, hasNextLine: true
                 }
                 // 直前でresponseRouteにpushされたresponseLineのpass_stationsに追加
                 responseLine?.pass_stations.push(responseStation)

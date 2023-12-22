@@ -13,8 +13,8 @@ const originStationId = Number(route.params.origin);
 let originStationName = ''
 const destinationStationId = Number(route.params.destination);
 let destinationStationName = ''
-let timeRequiredHourMin = [0, 0]
 let requiredTime = 0
+let timeRequiredHourMin = [0, 0]
 
 let resultRoute = {};
 
@@ -45,16 +45,20 @@ const fetchRoute = async () => {
     transferTime: route.query.transferTime,
     mode: mode
   }
-  const query = new URLSearchParams(params);
-  const { data } = await useAsyncData(
-    'fetchMessage',
-    () => $fetch(runtimeConfig.ROUTE_API_ENDPOINT + '?' + query).catch((error) => console.log(error))
-  )
-  resultRoute = data.value;
-  originStationName = resultRoute.originStationName
-  destinationStationName = resultRoute.destinationStationName
-  requiredTime = transferTime
-  timeRequiredHourMin = secToMin(requiredTime)
+  try {
+    const query = new URLSearchParams(params);
+    const { data } = await useAsyncData(
+      'routeData',
+      () => $fetch(runtimeConfig.public.routeApiEndpoint + '?' + query)
+    )
+    resultRoute = JSON.parse(data.value)
+    originStationName = resultRoute.originStationName
+    destinationStationName = resultRoute.destinationStationName
+    requiredTime = resultRoute.requiredTime
+    timeRequiredHourMin = secToMin(requiredTime)
+  } catch (error) {
+    console.log(error)
+  }  
   
 };
 
