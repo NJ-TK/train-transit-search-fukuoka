@@ -29,7 +29,7 @@ const routeSearch = () => {
     showInvaridMessage.value = true
     return
   }
-  window.location.href = `/route/${props.originStationId}/${props.destinationStationId}?${query}`
+  router.push({ path: `/route/${props.originStationId}/${props.destinationStationId}`, query: params })
 }
 </script>
 
