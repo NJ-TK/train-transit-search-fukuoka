@@ -139,6 +139,10 @@ const routeSearch = () => {
         </div>
       </details>
     </div>
+    
+    <div class="source-info">
+        <p>Source code is available on <a href="https://github.com/NJ-TK/train-transit-search-fukuoka">GitHub</a>.</p>
+    </div>
   </div>
 </template>
 
