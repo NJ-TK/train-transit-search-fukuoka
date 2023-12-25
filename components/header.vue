@@ -3,7 +3,6 @@ const props = defineProps({
   headerIcon: String | undefined,
   headerTitle: String
 });
-console.log(props.headerIcon)
 </script>
 <template>
   <header class="title-bar">

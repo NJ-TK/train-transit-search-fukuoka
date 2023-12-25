@@ -90,7 +90,6 @@ export const handler: Handler = async (event: any, _context: any) => {
             throw new Error('Station Parameter(s) Invalid!')
         }
 
-        console.log('計算開始')
         const graph = new Graph()
 
         for (const route_ of rawRouteList) {
@@ -103,7 +102,7 @@ export const handler: Handler = async (event: any, _context: any) => {
         }
 
         const dijkstra = new Dijkstra(graph)
-        console.log(`${originStation.name}→${destinationStation.name}`)
+        console.log(`route_search`)
 
         let transferTime = 5
         if (!isNaN(event.queryStringParameters.transferTime)) transferTime = Number(event.queryStringParameters.transferTime)
