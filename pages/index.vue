@@ -2,6 +2,7 @@
 import { createApp, ref, onMounted } from "vue";
 import home from "../components/home.vue";
 import stationListComponent from "../components/station_list.vue"
+import trainMap from '../components/map.vue'
 
 const runtimeConfig = useRuntimeConfig();
 
@@ -36,7 +37,7 @@ const fetchStationList = async () => {
         return $fetch(runtimeConfig.public.stationListApiEndpoint + '?' + query)
       }
     )
-    const data_ = JSON.parse(data.value)
+    const data_ = typeof data.value == 'string' ? JSON.parse(data.value) : data.value
     stationList = data_.stations
     lineList = data_.lines
   } catch (error) {
@@ -67,19 +68,10 @@ const closeStationSelect = (station = null) => {
          :stationList="stationList" :lineList="lineList" />
       <home v-show="!isStationListVisible" @origin-station-clicked="showStationList" 
         :originStationName="originStationName" :originStationId="originStationId"
-        :destinationStationName="destinationStationName" :destinationStationId="destinationStationId" />
+        :destinationStationName="destinationStationName" :destinationStationId="destinationStationId" />        
     </section>
-    <section id="map_panel">
-      
-      <!-- <div id="train_map_container">
-                <object id="train_map" data="train_map/train_map.svg" type="image/svg+xml"></object>
-            </div> -->
-      <div id="map_control">
-        <!-- <button id="train_map_zoom_in" class="material-icons">zoom_in</button>
-                <button id="train_map_zoom_out" class="material-icons">zoom_out</button> -->
-        <button id="train_map_raw" class="material-icons">open_in_new</button>
-      </div>
-    </section>
+    
+    <trainMap />
   </div>
 </template>
 <style scoped>

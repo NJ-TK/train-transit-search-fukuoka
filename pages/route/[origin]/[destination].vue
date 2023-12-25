@@ -1,5 +1,6 @@
 <script setup>
 import headerComponent from '~/components/header.vue'
+import trainMap from '~/components/map.vue'
 import '@/assets/styles/route.css'
 
 const router = useRouter();
@@ -51,7 +52,7 @@ const fetchRoute = async () => {
       'routeData',
       () => $fetch(runtimeConfig.public.routeApiEndpoint + '?' + query)
     )
-    resultRoute = JSON.parse(data.value)
+    resultRoute = typeof data.value == 'string' ? JSON.parse(data.value) : data.value
     originStationName = resultRoute.originStationName
     destinationStationName = resultRoute.destinationStationName
     requiredTime = resultRoute.requiredTime
@@ -157,5 +158,8 @@ const backToHome = () => {
         </div>
       </div>
     </section>
+
+    <trainMap />
+
   </div>
 </template>
