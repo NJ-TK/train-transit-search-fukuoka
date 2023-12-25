@@ -1,4 +1,10 @@
 [build]
     publish = "dist"
     command = "yarn generate"
-    
+
+[functions]
+    directory = "netlify/functions"
+    included_files = ["netlify/functions/route-db/*.json"]
+
+[dev]
+    functionsPort = 8888

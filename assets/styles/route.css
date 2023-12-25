@@ -1,0 +1,239 @@
+.route-info-panel {
+    width: 100%;
+    background-color: #37474f;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.route-info-panel #route_title {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: bold;
+    line-height: normal;
+}
+.route-info-panel #route_detail {
+    font-size: 11pt;
+    text-align: center;
+}
+#route_panel {
+    width: 100%;
+    padding: 0;
+    padding-top: 10px;
+}
+#route_panel .station {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    height: 40px;
+}
+#route_panel .station .time {
+    color: #0d47a1;
+    font-size: 9pt;
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 40px;
+}
+#route_panel .line-graphic {
+    width: 8px;
+    height: 100%;
+    background-color: #546e7a;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+#route_panel .line-graphic.dashed {
+    background-image : linear-gradient(to bottom, #000, #000 8px, transparent 4px, transparent 4px);  /* 幅2の線を作る */
+    background-size: 8px 12px;
+    background-position: left bottom;
+    background-repeat: repeat-y;
+    background-color: #fff;
+}
+#route_panel .line-graphic.double {
+    width: 2px;
+    background-color: #fff;
+    border-left: solid #546e7a 3px;
+    border-right: solid #546e7a 3px;
+}
+#route_panel .station .line-graphic-container {
+    width: 24px;
+    height: 100%;
+    position: relative;
+}
+#route_panel .station .line-graphic-container .line-graphic.top {
+    position: absolute;
+    top: 0;
+    height: 50%;
+}
+#route_panel .station .line-graphic-container .line-graphic.bottom {
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+}
+#route_panel .station .mark {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: solid 4px #546e7a;
+    background-color: #fff;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#route_panel .station .line-graphic-container .mark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+#route_panel .station .line-graphic-container .mark.top {
+    height: 8px;
+    border-radius: 50% 50% 0 0/100% 100% 0 0;
+    transform: none;
+    top: auto;
+    bottom: 50%;
+    border-bottom: none;
+}
+#route_panel .station .line-graphic-container .mark.bottom {
+    height: 8px;
+    border-radius: 0 0 50% 50% /0 0 100% 100%;
+    transform: none;
+    top: 50%;
+    border-top: none;
+}
+#route_panel .station .refs {
+    margin-left: 8px;
+    height: 100%;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#route_panel .station .st-ref {
+    width: 32px;
+    font-size: 8pt;
+    height: 12pt;
+    background-color: #546e7a;
+    color: #fff;
+    text-align: center;
+    line-height: normal;
+    border-radius: 2px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+#route_panel .station .st-ref.hidden {
+    display: none;
+}
+#route_panel .station .st-ref span {
+    color: #546e7a;
+    filter: invert(100%) grayscale(100%) contrast(100);
+}
+#route_panel .station .name {
+    margin: 4px;
+    font-size: 16pt;
+    font-weight: bold;
+}
+#route_panel .line-info {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#route_panel .line-info .line-graphic {
+    justify-content: space-between;
+    flex-direction: column;
+    height: auto;
+    margin-left: 58px;
+    margin-right: 5px;
+}
+#route_panel .line-info .line-info-contents {
+    margin: 10px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+#route_panel .line-info .line-prime-info {
+    display: flex;
+    align-items: flex-end;
+}
+#route_panel .line-info .line-prime-info .ln-ref {
+    width: 32px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #546e7a;
+    color: #fff;
+    font-weight: bold;
+    box-sizing: border-box;
+    font-size: 10pt;
+    line-height: normal;
+    text-align: center;
+    overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+#route_panel .line-info .line-prime-info .ln-ref span {
+    color: #546e7a;
+    filter: invert(100%) grayscale(100%) contrast(100);
+}
+#route_panel .line-info .line-prime-info .ln-ref.blank {
+    border-radius: 0;
+    width: 8px;
+}
+#route_panel .line-info .line-prime-info .text {
+    margin-left: 4px;
+}
+#route_panel .line-info .line-prime-info .text .owner {
+    font-size: 8pt;
+    color: #555;
+    line-height: normal;
+}
+#route_panel .line-info .line-prime-info .text  .name {
+    font-size: 11pt;
+    line-height: 14pt;
+}
+#route_panel .pass-stations {
+    width: 100%;
+}
+#route_panel .pass-stations summary {
+    display: flex;
+    flex-wrap: wrap;
+}
+#route_panel .pass-stations summary .line-graphic {
+    justify-content: space-between;
+    flex-direction: column;
+    height: auto;
+    margin-left: 58px;
+    margin-right: 5px;
+}
+#route_panel .pass-stations summary {
+    list-style: none;
+    font-size: 11pt;
+    color: #555;
+    cursor: pointer;
+}
+#route_panel .pass-stations details summary .material-icons::before {
+    content: "expand_more";
+}
+#route_panel .pass-stations details[open] summary .material-icons::before {
+    content: "expand_less";
+}
+#route_panel .pass-stations .station{
+    background-color: rgba(0, 0, 0, 0);
+    height: 28px;
+}
+#route_panel .pass-stations .station .time {
+    margin-top: 8px;
+}
+#route_panel .pass-stations .station .st-ref {
+    margin: 8px;
+    margin-right: 0;
+}
+#route_panel .pass-stations .station .name {
+    font-size: 12pt;
+    font-weight: normal;
+    margin-bottom: 0
+}
+#route_panel .pass-stations .station .mark {
+    width: 6px;
+    height: 6px;
+    border: none;
+    margin-left: -12px;
+    margin-top: 14px;
+}

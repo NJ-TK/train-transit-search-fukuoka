@@ -1,0 +1,284 @@
+[
+	{
+		"id": 0,
+		"name": "鹿児島本線",
+		"name_kana": "かごしまほんせん",
+		"name_en": "Kagoshima Line",
+		"ref": "JA JB",
+		"color": "#EE3D49",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 1,
+		"name": "山陽本線",
+		"name_kana": "さんようほんせん",
+		"name_en": "Sanyo Line",
+		"ref": "JA",
+		"color": "#EE3D49",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 2,
+		"name": "福北ゆたか線",
+		"name_kana": "ふくほくゆたかせん",
+		"name_en": "Fukuhoku-yutaka Line",
+		"ref": "JC",
+		"color": "#FAAF18",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 3,
+		"name": "香椎線",
+		"name_kana": "かしいせん",
+		"name_en": "Kashii Line",
+		"ref": "JD",
+		"color": "#0095D9",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 4,
+		"name": "若松線",
+		"name_kana": "わかまつせん",
+		"name_en": "Wakamatsu Line",
+		"ref": "JE",
+		"color": "#0095D9",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 5,
+		"name": "日豊本線",
+		"name_kana": "にっぽうほんせん",
+		"name_en": "Nippo Line",
+		"ref": "JF",
+		"color": "#0095D9",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 6,
+		"name": "原田線",
+		"name_kana": "はるだせん",
+		"name_en": "Haruda Line",
+		"ref": "JG",
+		"color": "#36B558",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 7,
+		"name": "長崎本線",
+		"name_kana": "ながさきほんせん",
+		"name_en": "Nagasaki Line",
+		"ref": "JH",
+		"color": "#FAAF18",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 8,
+		"name": "日田彦山線",
+		"name_kana": "ひたひこさんせん",
+		"name_en": "Hitahikosan Line",
+		"ref": "JI",
+		"color": "#B96F30",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 9,
+		"name": "後藤寺線",
+		"name_kana": "ごとうじせん",
+		"name_en": "Gotoji Line",
+		"ref": "JJ",
+		"color": "#8F3E97",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 10,
+		"name": "筑肥線",
+		"name_kana": "ちくひせん",
+		"name_en": "Chikuhi Line",
+		"ref": "JK",
+		"color": "#8F3E97",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 11,
+		"name": "久大本線",
+		"name_kana": "きゅうだいほんせん",
+		"name_en": "Kyudai Line",
+		"color": "#36B558",
+		"owner": "JR九州",
+		"type": "JR"
+	},
+	{
+		"id": 12,
+		"name": "九州新幹線",
+		"name_kana": "きゅうしゅうしんかんせん",
+		"name_en": "Kyushu Shinkansen Exp. Line",
+		"color": "#FF0000",
+		"owner": "JR九州",
+		"type": "bullet"
+	},
+	{
+		"id": 13,
+		"name": "山陽新幹線",
+		"name_kana": "さんようしんかんせん",
+		"name_en": "Sanyo Shinkansen Exp. Line",
+		"color": "#0072BA",
+		"owner": "JR西日本",
+		"type": "bullet"
+	},
+	{
+		"id": 14,
+		"name": "博多南線",
+		"name_kana": "はかたみなみせん",
+		"name_en": "Hakata-minami Line",
+		"color": "#0072BA",
+		"owner": "JR西日本",
+		"type": "JR"
+	},
+	{
+		"id": 15,
+		"name": "空港線",
+		"name_kana": "くうこうせん",
+		"name_en": "Kuko Line",
+		"ref": "K",
+		"color": "#FB7F09",
+		"owner": "福岡市地下鉄",
+		"type": "subway"
+	},
+	{
+		"id": 16,
+		"name": "箱崎線",
+		"name_kana": "はこざきせん",
+		"name_en": "Hakozaki Line",
+		"ref": "H",
+		"color": "#00A0E9",
+		"owner": "福岡市地下鉄",
+		"type": "subway"
+	},
+	{
+		"id": 17,
+		"name": "七隈線",
+		"name_kana": "ななくません",
+		"name_en": "Nanakuma Line",
+		"ref": "N",
+		"color": "#008B4F",
+		"owner": "福岡市地下鉄",
+		"type": "subway"
+	},
+	{
+		"id": 18,
+		"name": "天神大牟田線",
+		"name_kana": "てんじんおおむたせん",
+		"name_en": "Tenjin-Omuta Line",
+		"ref": "T",
+		"color": "#1065AB",
+		"owner": "西日本鉄道",
+		"type": "private"
+	},
+	{
+		"id": 19,
+		"name": "太宰府線",
+		"name_kana": "だざいふせん",
+		"name_en": "Dazaifu Line",
+		"ref": "D",
+		"color": "#1065AB",
+		"owner": "西日本鉄道",
+		"type": "private"
+	},
+	{
+		"id": 20,
+		"name": "甘木線",
+		"name_kana": "あまぎせん",
+		"name_en": "Amagi Line (Nishitetsu)",
+		"ref": "A",
+		"color": "#1066AB",
+		"owner": "西日本鉄道",
+		"type": "private"
+	},
+	{
+		"id": 21,
+		"name": "貝塚線",
+		"name_kana": "かいづかせん",
+		"name_en": "Kaizuka Line",
+		"ref": "NK",
+		"color": "#F5A100",
+		"owner": "西日本鉄道",
+		"type": "private"
+	},
+	{
+		"id": 22,
+		"name": "北九州モノレール",
+		"name_kana": "きたきゅうしゅうものれーる",
+		"name_en": "Kitakyushu Monorail",
+		"color": "#3333FF",
+		"type": "monorail"
+	},
+	{
+		"id": 23,
+		"name": "筑豊電鉄線",
+		"name_kana": "ちくほうでんてつせん",
+		"name_en": "Chikuho-dentetsu Line",
+		"ref": "CK",
+		"color": "#E30075",
+		"owner": "筑豊電気鉄道",
+		"type": "private"
+	},
+	{
+		"id": 24,
+		"name": "甘木線",
+		"name_kana": "あまぎせん",
+		"name_en": "Amagi Line (Amagi Railway)",
+		"color": "#009999",
+		"owner": "甘木鉄道",
+		"type": "private"
+	},
+	{
+		"id": 25,
+		"name": "伊田線",
+		"name_kana": "いたせん",
+		"name_en": "Ita Line",
+		"ref": "HC",
+		"color": "#F18A38",
+		"owner": "平成筑豊鉄道",
+		"type": "private"
+	},
+	{
+		"id": 26,
+		"name": "糸田線",
+		"name_kana": "いとだせん",
+		"name_en": "Itoda Line",
+		"ref": "HC",
+		"color": "#A3CA11",
+		"owner": "平成筑豊鉄道",
+		"type": "private"
+	},
+	{
+		"id": 27,
+		"name": "田川線",
+		"name_kana": "たがわせん",
+		"name_en": "Tagawa Line",
+		"ref": "HC",
+		"color": "#0CB6D9",
+		"owner": "平成筑豊鉄道",
+		"type": "private"
+	},
+	{
+		"id": 28,
+		"name": "門司港レトロ観光線",
+		"name_kana": "もじこうれとろかんこうせん",
+		"name_en": "Mojiko-retro Kanko Line",
+		"color": "#FFA500",
+		"owner": "平成筑豊鉄道",
+		"type": "sightseeing"
+	}
+]

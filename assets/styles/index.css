@@ -1,0 +1,195 @@
+#main_panel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 400px;
+    max-width: 100%;
+    height: 100%;
+    background-color: #eceff1;
+    overflow-y: auto;
+}
+.main-panel-page {
+    width: 100%;
+    margin: 0;
+    overflow: auto;
+    height: 100vh;
+}
+.main-panel-page.shown {
+    display: inline;
+}
+.main-panel-page .title-bar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 56px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #ffb300;
+    color: #000;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+.main-panel-page .title-bar .title {
+    margin-top: 8px;
+    font-size: 12pt;
+}
+#search_box_container {
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    max-width: 100%;
+    border-radius: 2px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.station-search-box {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px #aaa;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.station-search-box .label {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #ffb300;
+    width: 80px;
+    text-align: center;
+    font-size: 12pt;
+}
+.station-search-box .label.start-station-label {
+    background-color: #388e3c;
+    color: #fff;
+}
+.station-search-box .label.goal-station-label {
+    background-color: #d32f2f;
+    color: #fff;
+}
+.station-search-box .station-input {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    width: calc(100% - 90px);
+    height: 44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.station-search-box .station-input .placeholder {
+    color: #aaa;
+}
+
+button {
+    color: #fff;
+    box-shadow: 2px 2px 4px #aaa;
+    border-radius: 4px;
+    border: none;
+    background-color: #546e7a;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    opacity: 0.9;
+}
+button:hover {
+    opacity: 1;
+}
+#station_search_button {
+    background-color: #1565c0;
+    color: #fff;
+    font-size: 16pt;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.station-search-input-container {
+    width: 100%;
+    background-color: #fff;
+    height: 56px;
+    box-shadow: 2px 2px 4px #aaa;
+    display: table;
+    table-layout: fixed;
+}
+#station_search_back_button {
+    padding: 16px;
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+}
+#station_search_input {
+    display: table-cell;
+    vertical-align: middle;
+    width: calc(100% - 56px);
+    height: 56px;
+    border: none;
+    padding: 16px;
+    box-sizing: border-box;
+    font-size: 12pt;
+}
+#station_search_input:focus {
+    outline: none;
+}
+#station_search_result {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: calc(100vh - 56px);
+}
+.station-search-list-content {
+    border-bottom: solid 1px #aaa;
+    cursor: pointer;
+    margin: 0;
+}
+.station-search-list-content:hover {
+    background-color: rgba(255, 255, 255, .8);
+}
+.station-search-list-content .name {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: normal;
+}
+.station-search-list-content .name-kana {
+    font-size: 9pt;
+}
+.station-search-list-content .detail {
+    font-size: 9pt;
+    color: #555;
+    margin-bottom: 4px;
+}
+.station-search-list-content .detail .line {
+    background-color: #546e7a;
+    border-radius: 2px;
+    margin-right: 8px;
+    padding-right: 4px;
+}
+.station-search-list-content .detail .line span {
+    font-size: 9pt;
+    font-weight: normal;
+    color: #546e7a;
+    filter: invert(100%) grayscale(100%) contrast(100);
+}
+.invalid-message {
+    color: #ff0000;
+}
+
+.source-info {
+    font-size: 9pt;
+    color: #999;
+    margin: 10px;
+    text-align: right;
+}
