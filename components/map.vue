@@ -1,4 +1,5 @@
 <script setup>
+import '@/assets/styles/train_map.css'
 const trainMapUrl = '/train_map/fukuoka_route_map.svg'
 const trainMapPdfUrl = '/train_map/fukuoka_route_map.pdf'
 let mapWidth = 300
