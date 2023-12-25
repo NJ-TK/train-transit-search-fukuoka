@@ -193,3 +193,8 @@ button:hover {
     margin: 10px;
     text-align: right;
 }
+.service-info {
+    font-size: 10pt;
+    margin: 10px;
+    color: #444;
+}

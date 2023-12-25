@@ -37,7 +37,7 @@ const routeSearch = () => {
 <template>
   <div id="search_page" class="main-panel-page">
 
-    <headerComponent :headerIcon="'train'" :headerTitle="'乗り換え検索'" />
+    <headerComponent :headerIcon="'train'" :headerTitle="'福岡県内 乗り換え検索'" />
 
     <div id="search_box_container">
       <div
@@ -140,6 +140,11 @@ const routeSearch = () => {
       </details>
     </div>
     
+    <div class="service-info">
+        <p>
+            福岡県近郊の鉄道の乗り換え経路を検索します。<br>正確な時刻表に基づいて算出するわけではないため、 所要時間はあくまで目安です。
+        </p>
+    </div>
     <div class="source-info">
         <p>Source code is available on <a href="https://github.com/NJ-TK/train-transit-search-fukuoka">GitHub</a>.</p>
     </div>
