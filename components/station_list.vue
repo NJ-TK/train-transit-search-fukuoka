@@ -12,6 +12,8 @@ const searchWord = ref("");
 
 const searchResults = ref([]);
 
+let searchInput = ref()
+
 const beginMatchStations = (keyword, kana = false, en = false) => {
   //駅名を前方一致検索 駅情報の配列を返す
   const stations = props.stationList;
@@ -43,6 +45,10 @@ const searchStation = () => {
 const selectStation = (station) => {
   emit('close-station-select', station)
 }
+
+onMounted(() => {
+    searchInput.value.focus()
+})
 </script>
 
 <template>
@@ -56,12 +62,13 @@ const selectStation = (station) => {
         arrow_back
       </div>
       <input
+        ref="searchInput"
         type="text"
         id="station_search_input"
         placeholder="駅名を入力"
         autocomplete="off"
         v-model="searchWord"
-        @input="searchStation"
+        @input="searchStation" 
       />
     </div>
     <div id="station_search_result">
