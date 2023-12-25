@@ -9,6 +9,7 @@ const props = defineProps({
   destinationStationName: String,
   destinationStationId: Number
 });
+const trainMapUrl = '/train_map/fukuoka_route_map.svg'
 
 let showInvaridMessage = ref(false)
 let useBulletTrain = ref(true), useJR = ref(true), usePrivateTrain = ref(true), useSubwayAndMonorail = ref(true)
@@ -30,6 +31,10 @@ const routeSearch = () => {
     return
   }
   router.push({ path: `/route/${props.originStationId}/${props.destinationStationId}`, query: params })
+}
+
+const openTrainMapRaw = () => {
+    window.open(trainMapUrl)
 }
 </script>
 
@@ -146,6 +151,7 @@ const routeSearch = () => {
         </p>
     </div>
     <div class="source-info">
+        <button @click="openTrainMapRaw" class="show-map-button only-mobile"><i class="material-icons">map</i><br>路線図を見る</button>
         <p>Source code is available on <a href="https://github.com/NJ-TK/train-transit-search-fukuoka">GitHub</a>.</p>
     </div>
   </div>
