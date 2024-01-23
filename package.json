@@ -13,10 +13,10 @@
     "netlify:deploy": "netlify deploy --build --prod --open"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "netlify-cli": "^17.10.1",
-    "nuxt": "^3.8.2",
-    "vue": "^3.3.10"
+    "@nuxt/devtools": "1.0.8",
+    "netlify-cli": "^17.15.2",
+    "nuxt": "^3.9.3",
+    "vue": "^3.4.15"
   },
   "dependencies": {
     "nuxt-material-design-icons-iconfont": "^1.0.2"
